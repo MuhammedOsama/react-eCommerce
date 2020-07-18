@@ -1,2 +1,76 @@
 @import "../../variables";
 @import "../Blocks/style/Main.scss";
+// Start Navbar
+#navbar {
+    padding: 20px;
+    box-shadow: 1px 1px 9px rgb(224, 222, 222);
+    .logo {
+        padding-left: 15px;
+        margin-right: 15%;
+    }
+    .links {
+        color: #000;
+        margin-right: 30px;
+        border-bottom: 1px solid transparent;
+        transition: .3s ease-in-out;
+        &:hover {
+            border-bottom: 1px solid #000;
+        }
+    }
+    .sale {
+        color: $mainColor;
+    }
+    .icons {
+        @media (max-width: 720px) {
+            display: block;
+        }
+        @media (max-width: 800px) {
+            margin-left: 270px;
+        }
+        @media (max-width: 414px) {
+            margin-left: -5px;
+        }
+        .icon,
+        .icon1 {
+            margin: 0 20px;
+            @media (max-width: 375px) {
+                margin-left: -5px;
+            }
+        }
+        .icon1 .cart-badge {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: #000;
+            color: white;
+            position: absolute;
+            top: 25px;
+            right: 30px;
+            @media (max-width: 800px) {
+                right: 115px;
+            }
+            @media (max-width: 768px) {
+                right: 102px;
+            }
+            @media (max-width: 414px) {
+                right: 90px;
+            }
+            @media (max-width: 375px) {
+                right: 96px;
+            }
+        }
+        .cart-line {
+            display: block;
+            height: 20px;
+            width: 1px;
+            background-color: $bgColor;
+            margin-top: 5px;
+            @media (max-width: 800px) {
+                display: none;
+            }
+        }
+    }
+}
