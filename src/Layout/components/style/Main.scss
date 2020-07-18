@@ -21,7 +21,9 @@
         color: $mainColor;
     }
     .icons {
-        display: block;
+        @media (max-width: 720px) {
+            display: block;
+        }
         @media (max-width: 800px) {
             margin-left: 270px;
         }
@@ -35,7 +37,7 @@
                 margin-left: -5px;
             }
         }
-        .icon1 .header-icon {
+        .icon1 .cart-badge {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -60,8 +62,12 @@
                 right: 96px;
             }
         }
-        label {
-            color: #999;
+        .cart-line {
+            display: block;
+            height: 20px;
+            width: 1px;
+            background-color: $bgColor;
+            margin-top: 5px;
             @media (max-width: 800px) {
                 display: none;
             }

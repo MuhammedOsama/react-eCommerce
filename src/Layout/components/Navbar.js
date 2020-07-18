@@ -20,9 +20,9 @@ class MainNavbar extends Component {
                     </Navbar.Collapse>
                         <Nav className="icons">
                             <a href="#" className="icon"><img src="./icon-header-01.png" alt="Icon"/></a>
-                            <label htmlFor="/">|</label>
+                            <span className="cart-line"></span>
                             <a href="#" className="icon1"><img src="./icon-header-02.png" alt="Icon"/>
-                                <span className="header-icon">0</span>
+                                <label className="cart-badge">0</label>
                             </a>
                         </Nav>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
