@@ -31,15 +31,17 @@
         right: 20px;
     }
     .cart-product {
+        padding: 5px 0;
         .cart-items {
             display: flex;
             flex-wrap: wrap;
             align-items: center;
             padding: 5px 0;
             .item-img img {
+                padding-left: 10px;
                 width: 80px;
                 position: relative;
-                margin-right: 0px;
+                margin-right: 10px;
             }
             .item-txt {
                 width: calc(100% - 100px);

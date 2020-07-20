@@ -38,6 +38,9 @@
             outline: none;
             .cart-visible {
                 display: none;
+                &:focus {
+                    display: block;
+                }
             }
             &:focus {
                 .cart-visible {
