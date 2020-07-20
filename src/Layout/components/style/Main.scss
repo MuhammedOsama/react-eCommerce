@@ -21,18 +21,30 @@
         color: $mainColor;
     }
     .icons {
-        @media (max-width: 720px) {
-            display: block;
-        }
         @media (max-width: 800px) {
-            margin-left: 270px;
+            display: block;
+            margin-left: 260px;
+        }
+        @media (max-width: 768px) {
+            margin-left: 240px;
         }
         @media (max-width: 414px) {
-            margin-left: -5px;
+            margin-left: -50px;
         }
         .icon,
         .icon1 {
-            margin: 0 20px;
+            background: none;
+            border: transparent;
+            outline: none;
+            .cart-visible {
+                display: none;
+            }
+            &:focus {
+                .cart-visible {
+                    display: block;
+                }
+            }
+            margin: 0 10px;
             @media (max-width: 375px) {
                 margin-left: -5px;
             }
@@ -43,6 +55,7 @@
             align-items: center;
             width: 16px;
             height: 16px;
+            font-size: 15px;
             border-radius: 50%;
             background-color: #000;
             color: white;
@@ -50,27 +63,32 @@
             top: 25px;
             right: 30px;
             @media (max-width: 800px) {
-                right: 115px;
-            }
-            @media (max-width: 768px) {
-                right: 102px;
+                right: 120px;
             }
             @media (max-width: 414px) {
-                right: 90px;
+                right: 115px;
             }
             @media (max-width: 375px) {
-                right: 96px;
+                right: 113px;
+            }
+            @media (max-width: 360px) {
+                right: 105px;
             }
         }
         .cart-line {
             display: block;
             height: 20px;
             width: 1px;
-            background-color: $bgColor;
+            background-color: #999;
             margin-top: 5px;
             @media (max-width: 800px) {
+                display: inline-block;
+            }
+            @media (max-width: 375px) {
                 display: none;
             }
         }
     }
 }
+
+// End Navbar

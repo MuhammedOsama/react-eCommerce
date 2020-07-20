@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import { Nav, Navbar } from 'react-bootstrap';
+import Cart from './Blocks/Cart';
 
 class MainNavbar extends Component {
+
     render() {
         return (
             <div>
                 <Navbar id="navbar" collapseOnSelect expand="lg" fixed="top">
-                    <a href="#" className="logo"><img src="./logo.png" alt="Logo"/></a>
+                    <a href="/" className="logo"><img src="./logo.png" alt="Logo"/></a>
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="mr-auto">
                             <Nav.Link className="links">Home</Nav.Link>
@@ -19,11 +21,14 @@ class MainNavbar extends Component {
                         </Nav>
                     </Navbar.Collapse>
                         <Nav className="icons">
-                            <a href="#" className="icon"><img src="./icon-header-01.png" alt="Icon"/></a>
+                            <button href="/" className="icon"><img src="./icon-header-01.png" alt="Icon"/></button>
                             <span className="cart-line"></span>
-                            <a href="#" className="icon1"><img src="./icon-header-02.png" alt="Icon"/>
+
+                            <button className="icon1">
+                                <img src="./icon-header-02.png" alt="Icon" />
                                 <label className="cart-badge">0</label>
-                            </a>
+                                <Cart cartClass={"cart-visible"} />
+                            </button>
                         </Nav>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 </Navbar>
