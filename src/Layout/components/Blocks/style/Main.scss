@@ -7,10 +7,11 @@
     position: absolute;
     z-index: 10;
     width: 339px;
-    top: 100%;
+    top: 99%;
     right: 40px;
     background-color: white;
     border: 2px solid #EEE;
+    border-top: 3px solid #EEE;
     border-radius: 5px;
     overflow: hidden;
     animation: cartAnimation .5s ease-in-out;
