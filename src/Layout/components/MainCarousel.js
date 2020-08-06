@@ -5,7 +5,7 @@ class MainCarousel extends Component {
     render() {
         return(
             <div id="main-carousel">
-                <Carousel className="carousel" fade="true">
+                <Carousel className="carousel" fade={true}>
                     <Carousel.Item>
                         <img className="d-block w-100" src="./master-slide-02.jpg" alt="First slide" />
                         <Carousel.Caption>
