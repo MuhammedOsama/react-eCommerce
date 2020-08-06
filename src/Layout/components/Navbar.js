@@ -14,9 +14,9 @@ class MainNavbar extends Component {
                             <Dropdown className="links">
                                 <Dropdown.Toggle className="dropdownmenu">Home</Dropdown.Toggle>
                                 <Dropdown.Menu className="dropdownitem">
-                                    <Dropdown.Item className="homepage" href="#/action-1">HomePage V1</Dropdown.Item>
-                                    <Dropdown.Item className="homepage" href="#/action-2">HomePage V2</Dropdown.Item>
-                                    <Dropdown.Item className="homepage" href="#/action-3">HomePage V3</Dropdown.Item>
+                                    <Dropdown.Item className="homepage" href="/action-1">HomePage V1</Dropdown.Item>
+                                    <Dropdown.Item className="homepage" href="/action-2">HomePage V2</Dropdown.Item>
+                                    <Dropdown.Item className="homepage" href="/action-3">HomePage V3</Dropdown.Item>
                                 </Dropdown.Menu>
                             </Dropdown>
                             <Nav.Link className="links">Shop</Nav.Link>
