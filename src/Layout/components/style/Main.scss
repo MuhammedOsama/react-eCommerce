@@ -26,12 +26,13 @@ body {
             background-color: transparent;
             color: #000;
             border: none;
-            outline: none;
+            box-shadow: none;
         }
         .dropdownitem {
             background-color: #222;
             top: 50px;
             .homepage {
+                outline: none;
                 color: #FFF;
                 padding: 10px;
                 transition: .3s ease-in-out;
