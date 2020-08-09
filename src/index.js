@@ -9,9 +9,7 @@ import 'normalize.css';
 import './Layout/components/style/Main.scss';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+    <App />,
   document.getElementById('root')
 );
 
