@@ -4,7 +4,7 @@ class Categories extends Component {
     render() {
         return(
             <div id="categories">
-            <div className="container">
+                <div className="container">
                 <div className="row text-center">
                         <div className="col-lg-4 col-12">
                             <div className="block1 hov-img-zoom pos-relative">
