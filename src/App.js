@@ -5,6 +5,7 @@ import Categories from './Layout/components/Categories';
 import Products from './Layout/components/Products';
 import CountDown from './Layout/components/CountDown';
 import Features from './Layout/components/Features';
+import Footer from './Layout/components/Footer';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Products />
       <CountDown />
       <Features />
+      <Footer />
     </div>
   );
 }
