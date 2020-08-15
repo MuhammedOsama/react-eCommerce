@@ -32,7 +32,7 @@ class MainCarousel extends Component {
                     </Carousel.Item>
                 </Carousel>
             </div>
-        )
+        );
     }
 }
 

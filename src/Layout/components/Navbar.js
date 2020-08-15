@@ -40,7 +40,7 @@ class MainNavbar extends Component {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 </Navbar>
             </div>
-        )
+        );
     }
 }
 
