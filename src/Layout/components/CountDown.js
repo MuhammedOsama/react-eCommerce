@@ -59,20 +59,16 @@ const CountDown = () => {
                                 <div className="timer">
                                     <div className="count">
                                         <section>
-                                            <p className="num">{timerDays}</p>
-                                            <p><small>Days</small></p>
+                                            <p className="num">{timerDays}<br /><small>Days</small></p>
                                         </section>
                                         <section>
-                                            <p className="num">{timerHrs}</p>
-                                            <p><small>Hrs</small></p>
+                                            <p className="num">{timerHrs}<br /><small>Hrs</small></p>
                                         </section>
                                         <section>
-                                            <p className="num">{timerMins}</p>
-                                            <p><small>Mins</small></p>
+                                            <p className="num">{timerMins}<br /><small>Mins</small></p>
                                         </section>
                                         <section>
-                                            <p className="num">{timerSecs}</p>
-                                            <p><small>Secs</small></p>
+                                            <p className="num">{timerSecs}<br /><small>Secs</small></p>
                                         </section>
                                     </div>
                                 </div>

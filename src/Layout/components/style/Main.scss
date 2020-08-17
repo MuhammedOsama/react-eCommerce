@@ -731,10 +731,10 @@
                 margin-bottom: 70px;
             }
             @media (max-width: 414px) {
-                margin-bottom: 7px;
+                margin-bottom: 1px;
             }
             @media (max-width: 320px) {
-                margin-bottom: -10px;
+                margin-bottom: -12px;
             }
             label {
                 color: #555;
@@ -776,12 +776,21 @@
                 width: 100%;
                 .count {
                     display: grid;
-                    grid-template-columns: repeat(7, 1fr);
+                    grid-template-columns: repeat(4, 0fr);
                     text-align: center;
                     section {
-                        border: 1px solid #555;
-                        padding: 8px 8px 0;
-                        margin-left: 50px;
+                        border: 1px solid #999;
+                        padding: 0px 10px;
+                        margin-left: 10px;
+                        @media (max-width: 768px) {
+                            margin-bottom: 10px;
+                        }
+                        @media (max-width: 414px) {
+                            margin-bottom: 15px;
+                        }
+                        @media (max-width: 320px) {
+                            margin-bottom: 25px;
+                        }
                     }
                     p {
                         color: #555;
@@ -793,13 +802,6 @@
                 section p:first-child,
                 .timer div:last-child span {
                     font-size: 20px;
-                }
-                @media (max-width: 414px) {
-                    .count {
-                        .num {
-                            font-size: 15px;
-                        }
-                    }
                 }
                 @media (max-width: 320px) {
                     .count {
