@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class Categories extends Component {
 
-       // constructor(props) {
+    // constructor(props) {
     //     super(props);
     //     this.state = {
     //         items: [
