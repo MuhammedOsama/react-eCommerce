@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 
 class Footer extends Component {
+
     render() {
         return(
             <div id="footer">
                 <div className="container">
                     <div className="row">
-
+                        
                         <div className="col-lg-4 col-md-12 col-sm-12">
                             <h3>Get in touch</h3>
                             <p>Any questions? Let us know in store at 8th floor, 379 Hudson St, New York, NY 10018 or call us on (+1) 96 716 6879</p>

@@ -2,6 +2,14 @@ import React, { useState, useRef, useEffect } from 'react';
 
 const CountDown = () => {
 
+    const items = [
+        {image: "./banner-08.jpg", alter: "Beauty", header: "The Beauty", details: "LookBook", span: "View Collection"}
+    ]
+
+    const count = [
+        {image: "./shop-item-09.jpg", alter: "Glass", details: "Gafas sol Hawkers one", del:"$29.50", price: "$15.90"}
+    ]
+
     const [timerDays, setTimerDays] = useState('00');
     const [timerHrs, setTimerHrs] = useState('00');
     const [timerMins, setTimerMins] = useState('00');
@@ -41,39 +49,48 @@ const CountDown = () => {
             <div className="container">
                 <div className="row">
                     <div className="col-lg-6 col-12">
-                        <div className="hov-img pos-relative">
-                            <img src="./banner-08.jpg" alt="Beauty"/>
-                            <div className="carousel-caption beauty">
-                                <h3>The Beauty</h3>
-                                <h1>LookBook</h1>
-                                <span>View Collection</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-lg-6 col-12">
-                        <div className="hov-img pos-relative">
-                            <img src="./shop-item-09.jpg" alt="Glass"/>
-                            <div className="carousel-caption glass">
-                                <label>Gafas sol Hawkers one</label>
-                                <span><del>$29.50</del> $15.90</span>
-                                <div className="timer">
-                                    <div className="count">
-                                        <section>
-                                            <p className="num">{timerDays}<br /><small>Days</small></p>
-                                        </section>
-                                        <section>
-                                            <p className="num">{timerHrs}<br /><small>Hrs</small></p>
-                                        </section>
-                                        <section>
-                                            <p className="num">{timerMins}<br /><small>Mins</small></p>
-                                        </section>
-                                        <section>
-                                            <p className="num">{timerSecs}<br /><small>Secs</small></p>
-                                        </section>
+                        {items.map((item, id) => {
+                            return(
+                                <div key={id} className="hov-img pos-relative">
+                                    <img src={item.image} alt={item.alter} />
+                                    <div className="carousel-caption beauty">
+                                        <h3>{item.header}</h3>
+                                        <h1>{item.details}</h1>
+                                        <span>{item.span}</span>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
+                            )
+                        })}
+                        
+                    </div>
+                    <div className="col-lg-6 col-12">
+                        {count.map((item, id) => {
+                            return(
+                                <div key={id} className="hov-img pos-relative">
+                                    <img src={item.image} alt={item.alter} />
+                                    <div className="carousel-caption glass">
+                                        <label>{item.details}</label>
+                                        <span><del>{item.del}</del> {item.price}</span>
+                                        <div className="timer">
+                                            <div className="count">
+                                                <section>
+                                                    <p className="num">{timerDays}<br /><small>Days</small></p>
+                                                </section>
+                                                <section>
+                                                    <p className="num">{timerHrs}<br /><small>Hrs</small></p>
+                                                </section>
+                                                <section>
+                                                    <p className="num">{timerMins}<br /><small>Mins</small></p>
+                                                </section>
+                                                <section>
+                                                    <p className="num">{timerSecs}<br /><small>Secs</small></p>
+                                                </section>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            )
+                        })}
                     </div>
                 </div>
             </div>
