@@ -25,11 +25,11 @@
             height: auto;
         }
     }
-    @media(max-width: 800px) {
-        right: 120px;
+    @media(max-width: 768px) {
+        right: 10px;
     }
     @media(max-width: 414px) {
-        right: 20px;
+        right: 80px;
     }
     .cart-product {
         padding: 5px 0;
