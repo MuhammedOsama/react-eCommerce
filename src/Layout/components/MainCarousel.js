@@ -30,7 +30,7 @@ class MainCarousel extends Component {
                                                 </Carousel.Caption>
                                             </div>
                                     </Carousel.Item>
-                                )
+                                );
                             })}
                 </Carousel>
             </div>

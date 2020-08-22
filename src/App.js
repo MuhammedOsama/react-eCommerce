@@ -7,7 +7,7 @@ import CountDown from './Layout/components/CountDown';
 import Features from './Layout/components/Features';
 import Footer from './Layout/components/Footer';
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <MainNavbar />

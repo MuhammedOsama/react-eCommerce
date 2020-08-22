@@ -44,7 +44,7 @@ class Footer extends Component {
 
                         <div className="col-lg-2 col-md-4 col-sm-12">
                             <h3>Newsletter</h3>
-                            <input type="text" placeholder="email@example.com"/>
+                            <input type="text" placeholder="E-mail@example.com"/>
                             <button>Subscribe</button>
                         </div>
 

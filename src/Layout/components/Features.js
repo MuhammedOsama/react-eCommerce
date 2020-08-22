@@ -42,7 +42,7 @@ class Features extends Component {
                                     </div>
                                 </div>
                             </div> 
-                        )
+                        );
                     })}
 
                 </div>
@@ -54,7 +54,7 @@ class Features extends Component {
                                     <h4>{item.header}</h4>
                                     <p className={item.color}>{item.para}</p>
                                 </div>
-                            )
+                            );
                         })}
                     </div>
                 </div>
