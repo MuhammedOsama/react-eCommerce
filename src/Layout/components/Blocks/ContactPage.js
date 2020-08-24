@@ -51,8 +51,8 @@ class Contact extends Component {
                                 zoom={11}
                                 style={mapStyles}
                                 initialCenter={{
-                                lat: -1.2884,
-                                lng: 36.8233
+                                    latitude: -1.2884,
+                                    longitude: 36.8233
                                 }}
                             />
 

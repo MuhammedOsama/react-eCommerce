@@ -77,7 +77,7 @@ const CountDown = () => {
                                                     <p className="num">{timerDays}<br /><small>Days</small></p>
                                                 </section>
                                                 <section>
-                                                    <p className="num">{timerHrs}<br /><small>Hrs</small></p>
+                                                    <p className="num">{timerHrs}<br /><small>Hours</small></p>
                                                 </section>
                                                 <section>
                                                     <p className="num">{timerMins}<br /><small>Mins</small></p>
@@ -89,7 +89,7 @@ const CountDown = () => {
                                         </div>
                                     </div>
                                 </div>
-                            )
+                            );
                         })}
                     </div>
                 </div>

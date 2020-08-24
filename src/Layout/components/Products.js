@@ -71,7 +71,7 @@ class Products extends Component {
                                         </div>
                                     </div>
                                 </div>
-                            )
+                            );
                         })}
                     </AliceCarousel>
                     <button className="prev" onClick={() => this.slidePrev()}>
