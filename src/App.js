@@ -1,14 +1,24 @@
 import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 import Home from './Home';
-import featureCart from './Layout/components/Blocks/FeaturePage'
+import MainNavbar from './Layout/components/MainNavbar';
+import Footer from './Layout/components/Footer';
+import FeaturesPage from './Layout/components/Blocks/FeaturesPage'
+import AboutPage from './Layout/components/Blocks/AboutPage'
+import ContactPage from './Layout/components/Blocks/ContactPage'
 
 
 const App = () => {
   return (
     <BrowserRouter>
-      <Route path="/" exact component={Home} />
-      <Route path="/featureCart" exact component={featureCart} />
+      <div className="App">
+        <MainNavbar />
+        <Route path="/" exact component={Home} />
+        <Route path="/featuresPage" exact component={FeaturesPage} />
+        <Route path="/aboutPage" exact component={AboutPage} />
+        <Route path="/contactPage" exact component={ContactPage} />
+        <Footer />
+      </div>
     </BrowserRouter>
   );
 }

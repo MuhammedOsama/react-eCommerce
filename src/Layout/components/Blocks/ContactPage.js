@@ -35,6 +35,9 @@ class Contact extends Component {
     render() {
         return(
             <div id="contact">
+                <div className="cover">
+                    <h2>Contact</h2>
+                </div>
                 <div className="container">
                     <div className="row">
                         <div className="col-md-6">

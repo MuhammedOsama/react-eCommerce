@@ -8,16 +8,19 @@
         padding-left: 15px;
         margin-right: 15%;
     }
+    Link {
+        margin-top: 10px;
+    }
     .links {
         color: #000;
         margin-right: 30px;
-        border-bottom: 1px solid transparent;
+        // border-bottom: 1px solid transparent;
         transition: .3s ease-in-out;
         .dropdown-toggle::after {
             display: none;
         }
         &:hover {
-            border-bottom: 1px solid #000;
+            // border-bottom: 1px solid #000;
         }
         .dropdownmenu {
             background-color: transparent;

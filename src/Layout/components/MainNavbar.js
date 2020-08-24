@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Nav, Navbar, Dropdown } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import Cart from './Blocks/Cart';
 
 class MainNavbar extends Component {
@@ -12,19 +13,19 @@ class MainNavbar extends Component {
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="mr-auto">
                             <Dropdown className="links">
-                                <Dropdown.Toggle className="dropdownmenu">Home</Dropdown.Toggle>
+                                <Dropdown.Toggle className="dropdownmenu"><Link className="links">Home</Link></Dropdown.Toggle>
                                 <Dropdown.Menu className="dropdownitem">
                                     <Dropdown.Item className="homepage" href="/action-1">HomePage V1</Dropdown.Item>
                                     <Dropdown.Item className="homepage" href="/action-2">HomePage V2</Dropdown.Item>
                                     <Dropdown.Item className="homepage" href="/action-3">HomePage V3</Dropdown.Item>
                                 </Dropdown.Menu>
                             </Dropdown>
-                            <Nav.Link className="links">Shop</Nav.Link>
-                            <Nav.Link className="links sale">Sale</Nav.Link>
-                            <Nav.Link className="links">Features</Nav.Link>
-                            <Nav.Link className="links">Blog</Nav.Link>
-                            <Nav.Link className="links">About</Nav.Link>
-                            <Nav.Link className="links">Contact</Nav.Link>
+                            <Link className="links" to="">Shop</Link>
+                            <Link className="links sale" to="">Sale</Link>
+                            <Link className="links" to="/featuresPage">Features</Link>
+                            <Link className="links" to="">Blog</Link>
+                            <Link className="links" to="/aboutPage">About</Link>
+                            <Link className="links" to="/contactPage">Contact</Link>
                         </Nav>
                     </Navbar.Collapse>
                         <Nav className="icons">

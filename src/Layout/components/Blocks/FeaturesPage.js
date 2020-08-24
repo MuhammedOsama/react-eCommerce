@@ -20,13 +20,13 @@ class CartProducts extends Component {
         if(counter===1) {
             return;
         } else {
-            this.setState({count: counter - 1})
+            this.setState({counter: counter - 1})
         }
     }
 
     Up = () => {
         const {count} = this.state
-        this.setState({counter: count + 1})
+        this.setState({count: count + 1})
     }
 
     Down = () => {
