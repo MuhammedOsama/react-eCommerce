@@ -1,5 +1,6 @@
 import React from 'react';
-import MainNavbar from './Layout/components/Navbar';
+import {BrowserRouter, Route} from 'react-router-dom';
+import MainNavbar from './Layout/components/MainNavbar';
 import MainCarousel from './Layout/components/MainCarousel';
 import Categories from './Layout/components/Categories';
 import Products from './Layout/components/Products';
@@ -10,13 +11,15 @@ import Footer from './Layout/components/Footer';
 function App() {
   return (
     <div className="App">
-      <MainNavbar />
-      <MainCarousel />
-      <Categories />
-      <Products />
-      <CountDown />
-      <Features />
-      <Footer />
+      <BrowserRouter>
+        <MainNavbar />
+        <MainCarousel />
+        <Categories />
+        <Products />
+        <CountDown />
+        <Features />
+        <Footer />
+      </BrowserRouter>
     </div>
   );
 }
