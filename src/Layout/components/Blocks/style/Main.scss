@@ -1,3 +1,4 @@
+@import "../../../variables";
 * {
     list-style: none;
 }
@@ -9,7 +10,7 @@
     width: 339px;
     top: 99%;
     right: 40px;
-    background-color: white;
+    background-color: #FFF;
     border: 2px solid #EEE;
     border-top: 3px solid #EEE;
     border-radius: 5px;
@@ -55,7 +56,7 @@
                     transition: .3s ease-in-out;
                     &:hover {
                         text-decoration: none;
-                        color: #e65540;
+                        color: $mainColor;
                     }
                 }
                 .item-info {
@@ -103,6 +104,7 @@
 }
 
 // End Cart
+
 // Start FeaturePage
 #cart-products {
     margin-bottom: 80px;
