@@ -13,19 +13,19 @@ class MainNavbar extends Component {
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="mr-auto">
                             <Dropdown className="links">
-                                <Dropdown.Toggle className="dropdownmenu"><Link className="links">Home</Link></Dropdown.Toggle>
+                                <Dropdown.Toggle className="dropdownmenu"><Link>Home</Link></Dropdown.Toggle>
                                 <Dropdown.Menu className="dropdownitem">
                                     <Dropdown.Item className="homepage" href="/action-1">HomePage V1</Dropdown.Item>
                                     <Dropdown.Item className="homepage" href="/action-2">HomePage V2</Dropdown.Item>
                                     <Dropdown.Item className="homepage" href="/action-3">HomePage V3</Dropdown.Item>
                                 </Dropdown.Menu>
                             </Dropdown>
-                            <Link className="links" to="">Shop</Link>
-                            <Link className="links sale" to="">Sale</Link>
-                            <Link className="links" to="/featuresPage">Features</Link>
-                            <Link className="links" to="">Blog</Link>
-                            <Link className="links" to="/aboutPage">About</Link>
-                            <Link className="links" to="/contactPage">Contact</Link>
+                            <Nav.Link className="links"><Link to="">Shop</Link></Nav.Link>
+                            <Nav.Link className="links"><Link className="sale" to="">Sale</Link></Nav.Link>
+                            <Nav.Link className="links"><Link to="/featuresPage">Features</Link></Nav.Link>
+                            <Nav.Link className="links"><Link to="/blogPage">Blog</Link></Nav.Link>
+                            <Nav.Link className="links"><Link to="/aboutPage">About</Link></Nav.Link>
+                            <Nav.Link className="links"><Link to="/contactPage">Contact</Link></Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                         <Nav className="icons">

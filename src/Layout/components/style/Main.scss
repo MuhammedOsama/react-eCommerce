@@ -6,21 +6,21 @@
     background-color: #FFF;
     .logo {
         padding-left: 15px;
-        margin-right: 15%;
+        margin-right: 20%;
     }
-    Link {
-        margin-top: 10px;
+    a {
+        color: #222;
+        .sale {
+            color: $mainColor;
+        }
     }
     .links {
-        color: #000;
-        margin-right: 30px;
-        // border-bottom: 1px solid transparent;
+        color: #222;
+        margin-right: 20px;
         transition: .3s ease-in-out;
         .dropdown-toggle::after {
             display: none;
-        }
-        &:hover {
-            // border-bottom: 1px solid #000;
+            margin: 0;
         }
         .dropdownmenu {
             background-color: transparent;
@@ -50,9 +50,6 @@
         @media (max-width: 320px) {
             margin-right: 90px;
         }
-    }
-    .sale {
-        color: $mainColor;
     }
     .icons {
         @media (max-width: 768px) {
@@ -668,7 +665,7 @@
     margin-bottom: 80px;
     background-color: #F2F2F2;
     .col-lg-6 {
-        .hov-img {
+        .hov-img-zoom {
             display: block;
             overflow: hidden;
         }
@@ -819,6 +816,61 @@
 }
 
 // End CountDown
+// Start Blog
+#blog {
+    margin-bottom: 80px;
+    h2 {
+        text-transform: uppercase;
+        text-align: center;
+        color: #222;
+        font-size: 40px;
+        margin-bottom: 40px;
+        font-weight: 700;
+    }
+    .col-md-4 {
+        .hov-img-zoom {
+            display: block;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        .pos-relative {
+            position: relative;
+            img {
+                width: 100%;
+                transition: .3s ease-in-out;
+                &:hover {
+                    transform: scale(1.1, 1.1);
+                }
+            }
+        }
+        a {
+            display: block;
+            font-size: 17px;
+            margin-bottom: 10px;
+            color: #333;
+            transition: .3s ease-in-out;
+            &:hover {
+                color: $mainColor;
+                text-decoration: none;
+            }
+        }
+        span {
+            font-size: 15px;
+            color: #555;
+        }
+        p {
+            margin-top: 15px;
+            font-size: 13px;
+            line-height: 1.8;
+            color: #888;
+            @media (max-width: 414px) {
+                margin-bottom: 40px;
+            }
+        }
+    }
+}
+
+// End Blog
 // Start Features
 #features {
     margin-bottom: 80px;
