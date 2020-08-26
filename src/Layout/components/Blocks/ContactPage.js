@@ -40,7 +40,7 @@ class Contact extends Component {
                 </div>
                 <div className="container">
                     <div className="row">
-                        <div className="col-md-6">
+                        <div className="col-lg-6 col-12">
                             {/* <Map
                                 google={this.props.google}
                                 zoom={8}
@@ -60,7 +60,7 @@ class Contact extends Component {
                             />
 
                         </div>
-                        <div className="col-md-6">
+                        <div className="col-lg-6 col-12">
                             <h1>Send us your message</h1>
                             <input type="text" placeholder="Full Name" />
                             <input type="text" placeholder="Phone Number" />

@@ -13,15 +13,15 @@ class MainNavbar extends Component {
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="mr-auto">
                             <Dropdown className="links">
-                                <Dropdown.Toggle className="dropdownmenu"><Link>Home</Link></Dropdown.Toggle>
+                                <Dropdown.Toggle className="dropdownmenu"><Link to="/">Home</Link></Dropdown.Toggle>
                                 <Dropdown.Menu className="dropdownitem">
                                     <Dropdown.Item className="homepage" href="/action-1">HomePage V1</Dropdown.Item>
                                     <Dropdown.Item className="homepage" href="/action-2">HomePage V2</Dropdown.Item>
                                     <Dropdown.Item className="homepage" href="/action-3">HomePage V3</Dropdown.Item>
                                 </Dropdown.Menu>
                             </Dropdown>
-                            <Nav.Link className="links"><Link to="">Shop</Link></Nav.Link>
-                            <Nav.Link className="links"><Link className="sale" to="">Sale</Link></Nav.Link>
+                            <Nav.Link className="links"><Link to="/salesPage">Shop</Link></Nav.Link>
+                            <Nav.Link className="links"><Link className="sale" to="/salesPage">Sale</Link></Nav.Link>
                             <Nav.Link className="links"><Link to="/featuresPage">Features</Link></Nav.Link>
                             <Nav.Link className="links"><Link to="/blogPage">Blog</Link></Nav.Link>
                             <Nav.Link className="links"><Link to="/aboutPage">About</Link></Nav.Link>

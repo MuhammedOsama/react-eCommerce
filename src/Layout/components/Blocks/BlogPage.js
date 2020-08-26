@@ -4,7 +4,7 @@ import { Button } from 'react-bootstrap';
 class BlogPage extends Component {
     render() {
         return(
-            <div id="blogpage">
+            <div id="blog-page">
                 <div className="cover">
                     <h2>Blog</h2>
                 </div>
@@ -107,35 +107,35 @@ class BlogPage extends Component {
                                 <h3>Archive</h3>
                                 <div className="seasons">
                                     <p>
-                                        <a href="/">July 2020</a>
+                                        <a className="link" href="/">July 2020</a>
                                         <span>(9)</span>
                                     </p>
                                     <p>
-                                        <a href="/">June 2020</a>
+                                        <a className="link" href="/">June 2020</a>
                                         <span>(39)</span>
                                     </p>
                                     <p>
-                                        <a href="/">May 2020</a>
+                                        <a className="link" href="/">May 2020</a>
                                         <span>(29)</span>
                                     </p>
                                     <p>
-                                        <a href="/">April 2020</a>
+                                        <a className="link" href="/">April 2020</a>
                                         <span>(35)</span>
                                     </p>
                                     <p>
-                                        <a href="/">March 2020</a>
+                                        <a className="link" href="/">March 2020</a>
                                         <span>(22)</span>
                                     </p>
                                     <p>
-                                        <a href="/">February 2020</a>
+                                        <a className="link" href="/">February 2020</a>
                                         <span>(32)</span>
                                     </p>
                                     <p>
-                                        <a href="/">January 2020</a>
+                                        <a className="link" href="/">January 2020</a>
                                         <span>(21)</span>
                                     </p>
                                     <p>
-                                        <a href="/">December 2020</a>
+                                        <a className="link" href="/">December 2020</a>
                                         <span>(26)</span>
                                     </p>
                                 </div>
