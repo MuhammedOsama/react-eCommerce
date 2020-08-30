@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Dropdown } from 'react-bootstrap';
 
 class CartProducts extends Component {
 
@@ -83,7 +84,7 @@ class CartProducts extends Component {
                                             <span className="sign-2" onClick={this.Up}> + </span>
                                         </div>
                                     </th>
-                                    <th className="column-5">%16.00</th>
+                                    <th className="column-5">$16.00</th>
                                 </tr>
                                 <tr className="table-footer">
                                     <th className="column-1">
@@ -115,19 +116,25 @@ class CartProducts extends Component {
                                 <div className="calc">
                                     <span>Calculate Shipping</span>
                                     <div className="select">
-                                        <ul>
-                                            <li>Select a country...</li>
-                                            <li className="country">US</li>
-                                            <li className="country">UK</li>
-                                            <li className="country">Japan</li>
-                                        </ul>
+                                        <Dropdown className="dropdown">
+                                            <Dropdown.Toggle variant="success" id="dropdown-basic">
+                                                Select a country...
+                                            </Dropdown.Toggle>
+
+                                            <Dropdown.Menu>
+                                                <Dropdown.Item className="items active" href="#/action-2">Select a country...</Dropdown.Item>
+                                                <Dropdown.Item className="items" href="#/action-2">US</Dropdown.Item>
+                                                <Dropdown.Item className="items" href="#/action-3">UK</Dropdown.Item>
+                                                <Dropdown.Item className="items" href="#/action-3">Japan</Dropdown.Item>
+                                            </Dropdown.Menu>
+                                        </Dropdown>
                                         <input type="text" placeholder="State / Country" />
                                         <input type="text" placeholder="Postcode / Zip" />
-                                        <button>Update Totals</button>
                                         <div className="inner-total">
+                                        <button className="update">Update Totals</button>
                                             <span className="name">Total:</span>
                                             <span className="salary"> $39.00</span>
-                                            <button>Proceed To Checkout</button>
+                                            <button className="update">Proceed To Checkout</button>
                                         </div>
                                     </div>
                                 </div>
