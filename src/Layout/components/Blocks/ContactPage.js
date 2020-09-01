@@ -2,6 +2,15 @@ import React, { Component } from 'react';
 
 class Contact extends Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            items: [
+                {image: "./map.png", alter: "Map"}
+            ]
+        }
+    }
+
     render() {
         return(
             <div id="contact">
@@ -10,9 +19,14 @@ class Contact extends Component {
                 </div>
                 <div className="container">
                     <div className="row">
-                        <div className="col-lg-6 col-12">
-                            <img src="./map.png" alt="Map"/>
-                        </div>
+                        {this.state.items.map((item, id) => {
+                            return(
+                                <div key={id} className="col-lg-6 col-12">
+                                    <img src={item.image} alt={item.alter} />
+                                </div>
+                            );
+                        })}
+                        
                         <div className="col-lg-6 col-12">
                             <h1>Send us your message</h1>
                             <input type="text" placeholder="Full Name" />
