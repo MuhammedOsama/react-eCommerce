@@ -8,6 +8,11 @@
         padding-left: 15px;
         margin-right: 20%;
     }
+    .logo-img {
+        @media (max-width: 320px) {
+            width: 80%;
+        }
+    }
     a {
         color: #222;
         .sale {
@@ -45,10 +50,10 @@
     }
     .navbar-toggler {
         @media (max-width: 414px) {
-            margin-right: 75px;
+            margin-right: 9px;
         }
         @media (max-width: 320px) {
-            margin-right: 90px;
+            margin-right: -10px;
         }
     }
     .icons {
@@ -60,7 +65,7 @@
             margin-left: -6%;
         }
         @media (max-width: 320px) {
-            display: none;
+            margin-left: -28%;
         }
         .icon,
         .icon1 {
@@ -98,7 +103,10 @@
                 right: 91px;
             }
             @media (max-width: 414px) {
-                right: 160px;
+                right: 95px;
+            }
+            @media (max-width: 320px) {
+                right: 75px;
             }
         }
         .cart-line {

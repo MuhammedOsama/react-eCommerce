@@ -36,14 +36,7 @@ class BlogPage extends Component {
                 {class: "link", link: "February 2020", num: "(32)"},
                 {class: "link", link: "January 2020", num: "(21)"},
                 {class: "link", link: "December 2020", num: "(26)"}
-            ],
-            buttons: [
-                {btn: "Fashion"},
-                {btn: "Lifestyle"},
-                {btn: "Denim"},
-                {btn: "Streetstyle"},
-                {btn: "Crafts"}
-            ] 
+            ]
         }
     }
 
@@ -111,13 +104,11 @@ class BlogPage extends Component {
                             </div>
                             <div className="tags">
                                 <h2>Tags</h2>
-                                {this.state.buttons.map((item, id) => {
-                                    return(
-                                        <div key={id} className="btn">
-                                            <Button variant="outline-secondary">{item.btn}</Button>
-                                        </div>
-                                    );
-                                })}
+                                <Button variant="outline-secondary">Fashion</Button>
+                                <Button variant="outline-secondary">Lifestyle</Button>
+                                <Button variant="outline-secondary">Denim</Button>
+                                <Button variant="outline-secondary">Streetstyle</Button>
+                                <Button variant="outline-secondary">Crafts</Button>
                             </div>
                         </div>
                     </div>

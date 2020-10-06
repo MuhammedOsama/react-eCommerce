@@ -30,7 +30,11 @@
         right: 10px;
     }
     @media(max-width: 414px) {
-        right: 80px;
+        right: 70px;
+    }
+    @media(max-width: 320px) {
+        width: 95%;
+        right: 10px;
     }
     .cart-product {
         padding: 5px 0;
@@ -99,6 +103,10 @@
             &:hover {
                 background-color: $mainColor;
             }
+            @media (max-width: 320px) {
+                display: block;
+                margin-bottom: 20px;
+            }
         }
     }
 }
@@ -143,7 +151,7 @@
         }
         @media (max-width: 414px) {
             h2 {
-                top: 35%;
+                top: 30%;
                 left: 28%;
             }
         }
@@ -166,7 +174,7 @@
             }
             @media (max-width: 414px) {
                 font-size: 20px;
-                top: 62%;
+                top: 60%;
                 left: 12%;
             }
             @media (max-width: 320px) {
@@ -545,206 +553,119 @@
             }
         }
     }
-    .table-cart {
-        margin-bottom: 80px;
-        overflow-x: scroll;
-        overflow-y: hidden;
-        white-space: nowrap;
-        .table-head {
-            td {
-                font-size: 15px;
-                font-weight: 700;
-                line-height: 1.5;
-                color: #555;
-                padding: 15px 0 15px 10px;
-            }
+    .table {
+        margin-bottom: 40px;
+        @media (max-width: 414px) {
+            overflow-x: auto;
         }
-        .table-row {
-            border: 1px solid #E6E6E6;
-            .column-1 {
-                width: 225px;
-                .cart-img-1,
-                .cart-img-2 {
-                    background-image: url('/item-10.jpg');
-                    background-repeat: no-repeat;
-                    background-size: cover;
-                    background-position: center;
-                    position: relative;
-                    width: 40%;
-                    height: 150px;
-                    padding: 10px;
-                    margin: 30px 40px;
-                    cursor: pointer;
-                }
-                .cart-img-2 {
-                    background-image: url('/item-05.jpg');
+        table {
+            thead {
+                td {
+                    width: 22%;
+                    color: #555;
+                    font-size: 14px;
+                    font-weight: 650;
                 }
             }
-            p {
-                position: absolute;
-                color: #FFF;
-                display: none;
-                top: 0;
-                left: 0;
-                span {
-                    position: absolute;
-                    top: 43%;
-                    left: 45%;
-                    font-size: 18px;
-                    font-weight: 150;
-                }
-            }
-            @media (max-width: 991px) {
-                .cart-img-1,
-                .cart-img-2 {
-                    width: 35%;
-                    height: 120px;
-                    padding: 0;
-                    margin: 30px;
-                }
-                .cart-img-2 {
-                    margin: 0;
-                }
-                p {
-                    span {
-                        left: 45%;
-                        top: 38%;
+            .table-row {
+                border: 1px solid #DDD;
+                th {
+                    img {
+                        width: 50%;
+                        margin: 15px;
+                        cursor: pointer;
+                        @media (max-width: 414px) {
+                            width: 80px;
+                        }
+                    }
+                    h6,
+                    p,
+                    label {
                         font-size: 1rem;
+                        line-height: 1.5;
+                        font-weight: 350;
+                        color: #888;
+                        margin-top: 40%;
+                        @media (max-width: 414px) {
+                            width: 150px;
+                        }
+                    }
+                    p {
+                        font-size: 1.2rem;
+                    }
+                    label {
+                        color: #222;
+                        font-weight: 500;
+                    }
+                    .price {
+                        margin-top: 80%;
+                        @media (max-width: 414px) {
+                            margin-top: 40%;
+                        }
+                    }
+                    .quantity {
+                        margin-top: 35%;
+                        @media (max-width: 414px) {
+                            margin-top: 15%;
+                            width: 300px;
+                        }
+                        button {
+                            width: 40px;
+                            height: 50px;
+                            border: 2px solid #EEE;
+                            outline: none;
+                        }
+                        .counter {
+                            background: transparent;
+                        }
                     }
                 }
             }
         }
-        .column-2 {
-            width: 330px;
-            padding: 37px 30px 30px 0;
-            font-size: 15px;
-            line-height: 1.5;
-            color: #555;
-            font-weight: 350;
-        }
-        @media (max-width: 991px) {
-            .column-2 {
-                font-size: .9rem;
-                font-weight: 400;
-                padding: 0;
-                width: 100px;
-            }
-        }
-        .column-3 {
-            width: 133px;
-            padding: 37px 30px 30px 0;
-            font-size: 1.25rem;
-            line-height: 1.5;
-            color: #555;
-            font-weight: 300;
-        }
-        @media (max-width: 991px) {
-            .column-3 {
-                font-size: 1.25rem;
-                font-weight: 300;
-            }
-        }
-        .column-4 {
-            width: 355px;
-            padding: 37px 30px 30px 0;
-            font-size: 16px;
-            line-height: 1.5;
-            color: #555;
-            font-weight: 350;
-            .quantity {
-                span {
-                    padding: 15px;
-                    font-size: 15px;
-                    border-top: 2px solid #EEE;
-                    border-bottom: 2px solid #EEE;
-                }
-                .sign-1 {
-                    background-color: #E6E6E6;
-                    font-weight: 600;
-                    border-left: 2px solid #EEE;
-                    border-top-left-radius: 5px;
-                    border-bottom-left-radius: 5px;
-                    cursor: pointer;
-                    transition: .3s ease-in-out;
-                    &:hover {
-                        color: #FFF;
-                        background-color: $mainColor;
-                    }
-                }
-                .sign-2 {
-                    background-color: #E6E6E6;
-                    font-weight: 600;
-                    border-left: 2px solid #EEE;
-                    border-top-right-radius: 5px;
-                    border-bottom-right-radius: 5px;
-                    cursor: pointer;
-                    transition: .3s ease-in-out;
-                    &:hover {
-                        color: #FFF;
-                        background-color: $mainColor;
-                    }
-                }
-            }
-        }
-        .column-5 {
-            padding: 37px 30px 30px 0;
-            font-size: 1.25rem;
-            line-height: 1.5;
-            color: #555;
-            font-weight: 300;
-        }
-        @media (max-width: 991px) {
-            .column-5 {
-                font-size: 1.25rem;
-                font-weight: 300;
-            }
-        }
-    }
-    .table-footer {
-        border: 1px solid #E6E6E6;
-        .column-1 {
-            width: 225px;
+        .table-footer {
             padding: 20px;
-            input {
-                height: 45px;
-                width: 230px;
-                padding: 10px 15px;
-                border: 1px solid #E6E6E6;
-                font-size: 15px;
-                font-weight: 100;
-                outline: none;
-            }
-        }
-        .column-2 {
-            width: 330px;
-            button {
-                padding: 10px 40px;
-                border-radius: 25px;
-                font-size: 18px;
+            border: 1px solid #DDD;
+            @media (max-width: 414px) {
+                width: 100%;
                 border: none;
-                background-color: #222;
-                color: #FFF;
-                text-transform: uppercase;
-                transition: .3s ease-in-out;
-                &:hover {
-                    background-color: $mainColor;
+            }
+            .main-table-footer {
+                input {
+                    width: 350px;
+                    padding: 12px 20px;
+                    border: 1px solid #DDD;
+                    outline: none;
+                    font-size: .8rem;
+                    font-weight: 400;
+                    margin: 10px 30px 10px 0;
                 }
-            }
-        }
-        .column-5 {
-            button {
-                width: 150px;
-                padding: 10px 0;
-                font-size: 18px;
-                border-radius: 25px;
-                border: none;
-                background-color: #222;
-                color: #FFF;
-                margin-right: 50px;
-                text-transform: uppercase;
-                transition: .3s ease-in-out;
-                &:hover {
-                    background-color: $mainColor;
+                @media (max-width:768px) {
+                    input {
+                        display: block;
+                        padding: 13px 20px;
+                    }
+                }
+                button {
+                    background-color: #222;
+                    border: none;
+                    border-radius: 25px;
+                    color: #FFF;
+                    padding: 10px 30px;
+                    transition: .3s ease-in-out;
+                    margin: 10px 0 15px;
+                    &:hover {
+                        background-color: $mainColor
+                    }
+                    @media (max-width:768px) {
+                        margin-right: 30px;
+                    }
+                }
+                .cart-update-btn {
+                    float: right;
+                    @media (max-width: 768px) {
+                        margin-bottom: 30px;
+                        float: left;
+                    }
                 }
             }
         }
@@ -944,7 +865,7 @@
         }
         @media (max-width: 414px) {
             h2 {
-                top: 45%;
+                top: 35%;
                 left: 36%;
             }
         }
@@ -1181,20 +1102,18 @@
             h2 {
                 margin: 60px 0 30px 20%;
             }
-            .btn {
-                button {
-                    margin-left: 80%;
-                    color: #888;
-                    font-size: 13px;
-                    padding: 5px 15px;
-                    border: 1px solid #888;
-                    border-radius: 15px;
-                    transition: .3s ease-in-out;
-                    &:hover {
-                        color: $mainColor;
-                        border: 1px solid $mainColor;
-                        background-color: transparent;
-                    }
+            button {
+                margin: 2% 0 0 3%;
+                color: #888;
+                font-size: 13px;
+                padding: 5px 15px;
+                border: 1px solid #888;
+                border-radius: 15px;
+                transition: .3s ease-in-out;
+                &:hover {
+                    color: $mainColor;
+                    border: 1px solid $mainColor;
+                    background-color: transparent;
                 }
             }
         }
@@ -1241,7 +1160,7 @@
         }
         @media (max-width: 414px) {
             h2 {
-                top: 45%;
+                top: 35%;
                 left: 32%;
             }
         }
@@ -1328,7 +1247,7 @@
         }
         @media (max-width: 414px) {
             h2 {
-                top: 45%;
+                top: 35%;
                 left: 27%;
             }
         }
