@@ -7,9 +7,9 @@
 .cart-dropdown {
     position: absolute;
     z-index: 10;
-    width: 339px;
-    top: 99%;
-    right: 40px;
+    width: 340px;
+    top: 100%;
+    right: 10px;
     background-color: #FFF;
     border: 2px solid #EEE;
     border-top: 3px solid #EEE;
@@ -27,14 +27,15 @@
         }
     }
     @media(max-width: 768px) {
+        top: 160%;
         right: 10px;
     }
     @media(max-width: 414px) {
-        right: 70px;
+        right: -15%;
     }
     @media(max-width: 320px) {
-        width: 95%;
-        right: 10px;
+        width: 250%;
+        right: 5px;
     }
     .cart-product {
         padding: 5px 0;
@@ -114,7 +115,7 @@
 // End Cart
 // Start SalesPage
 #sales {
-    margin: 80px 0;
+    margin: 0 0 40px;
     .cover {
         background-image: url('/heading-pages-02.jpg');
         background-repeat: no-repeat;
@@ -505,7 +506,7 @@
 // End SalesPage
 // Start FeaturePage
 #cart-products {
-    margin: 80px 0;
+    margin: 0 0 40px;
     .cover {
         background-image: url('/heading-pages-01.jpg');
         background-repeat: no-repeat;
@@ -829,7 +830,7 @@
 // End FeaturePage
 // Start BlogPage
 #blog-page {
-    margin: 80px 0;
+    margin: 0 0 40px;
     .cover {
         background-image: url('/heading-pages-05.jpg');
         background-repeat: no-repeat;
@@ -1124,7 +1125,7 @@
 // End BlogPage
 // Start AboutPage
 #about {
-    margin: 80px 0;
+    margin: 0 0 80px;
     .cover {
         background-image: url('/heading-pages-06.jpg');
         background-repeat: no-repeat;
@@ -1212,7 +1213,7 @@
 // End AboutPage
 // Start ContactPage
 #contact {
-    margin: 80px 0;
+    margin: 0 0 80px;
     .cover {
         background-image: url('/heading-pages-06.jpg');
         background-repeat: no-repeat;
@@ -1262,12 +1263,22 @@
     .row {
         .col-lg-6 {
             iframe {
-                margin-top: 80px;
+                margin-top: 30px;
                 width: 500px;
-                height: 370px;
+                height: 420px;
                 border: none;
                 @media (max-width: 768px) {
                     margin-top: 0;
+                    width: 700px;
+                    height: 500px;
+                }
+                @media (max-width: 414px) {
+                    width: 380px;
+                    height: 300px;
+                }
+                @media (max-width: 320px) {
+                    width: 290px;
+                    height: 300px;
                 }
             }
             h1 {
@@ -1284,6 +1295,9 @@
                 border: 1px solid #888;
                 margin-bottom: 15px;
                 outline: none;
+                @media (max-width: 768px) {
+                    width: 700px;
+                }
                 @media (max-width: 414px) {
                     width: 380px;
                 }

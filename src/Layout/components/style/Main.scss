@@ -1,131 +1,73 @@
 @import "../../variables";
 @import "../Blocks/style/Main.scss";
 // Start Navbar
-#navbar {
-    padding: 20px;
+#header {
+    height: 57.5px;
     background-color: #FFF;
     .logo {
-        padding-left: 15px;
-        margin-right: 20%;
-    }
-    .logo-img {
-        @media (max-width: 320px) {
-            width: 80%;
-        }
-    }
-    a {
-        color: #222;
-        .sale {
-            color: $mainColor;
+        margin-right: 170px;
+        @media (max-width: 768px) {
+            margin: 0;
         }
     }
     .links {
-        color: #222;
-        margin-right: 20px;
-        transition: .3s ease-in-out;
-        .dropdown-toggle::after {
-            display: none;
-            margin: 0;
+        a {
+            color: #222;
+            margin: 0 10px;
         }
-        .dropdownmenu {
-            background-color: transparent;
-            color: #000;
-            border: none;
-            box-shadow: none;
-        }
-        .dropdownitem {
-            background-color: #222;
-            top: 50px;
-            .homepage {
-                outline: none;
-                color: #FFF;
-                padding: 10px;
-                transition: .3s ease-in-out;
-                &:hover {
-                    color: $mainColor;
-                    background-color: transparent;
-                }
-            }
+        .sale {
+            color: $mainColor
         }
     }
-    .navbar-toggler {
-        @media (max-width: 414px) {
-            margin-right: 9px;
+    .inner-sales {
+        display: flex;
+        img {
+            padding: 0 7px;
+            cursor: pointer;
         }
-        @media (max-width: 320px) {
-            margin-right: -10px;
-        }
-    }
-    .icons {
-        @media (max-width: 768px) {
+        .divider {
             display: block;
-            margin-left: 262px;
+            height: 20px;
+            width: 1px;
+            background-color: #E5E5E5;
+            margin: 5px 10px 0;
         }
-        @media (max-width: 414px) {
-            margin-left: -6%;
-        }
-        @media (max-width: 320px) {
-            margin-left: -28%;
-        }
-        .icon,
-        .icon1 {
-            background: none;
-            border: transparent;
-            outline: none;
-            .cart-visible {
+        .cart-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: #222;
+            color: #FFF;
+            width: 15px;
+            height: 15px;
+            font-size: 12px;
+            line-height: 15px;
+            border-radius: 50%;
+            @media (max-width: 768px) {
                 display: none;
-                &:focus {
-                    display: block;
-                }
             }
+        }
+        .cart-visible {
+            display: none;
+            &:focus {
+                display: block;
+            }
+        }
+        .icon-bag {
             &:focus {
                 .cart-visible {
                     display: block;
                 }
             }
-            margin: 0 10px;
-        }
-        .icon1 .cart-badge {
-            display: flex;
-            position: absolute;
-            justify-content: center;
-            align-items: center;
-            width: 16px;
-            height: 16px;
-            font-size: 15px;
-            border-radius: 50%;
-            background-color: #000;
-            color: white;
-            top: 25px;
-            right: 30px;
-            @media (max-width: 768px) {
-                top: 28px;
-                right: 91px;
-            }
-            @media (max-width: 414px) {
-                right: 95px;
-            }
-            @media (max-width: 320px) {
-                right: 75px;
-            }
-        }
-        .cart-line {
-            display: block;
-            height: 20px;
-            width: 1px;
-            background-color: #999;
-            margin-top: 5px;
-            @media (max-width: 768px) {
-                display: inline-block;
-            }
         }
     }
 }
 
+// }
 // End Navbar
 // Start Carousel
 #main-carousel {
-    margin: 80px 0;
+    margin: 0 0 80px;
     .carousel {
         .carousel-indicators {
             display: none;
@@ -885,18 +827,19 @@
     .header {
         h2 {
             margin-bottom: 40px;
-            width: 100%;
             text-align: center;
             font-size: 30px;
             color: #222;
-            line-height: 1.2;
             font-weight: 700;
         }
     }
     .grid-container {
         display: grid;
-        margin-bottom: 60px;
         grid-template-columns: auto auto auto auto auto;
+        margin-bottom: 60px;
+        @media (max-width: 768px) {
+            display: block;
+        }
         .grid-item {
             position: relative;
             &:hover {
@@ -909,35 +852,80 @@
             }
             img {
                 width: 100%;
+                margin-bottom: 25px;
+                @media (max-width: 768px) {
+                    margin: 0 0 25px 10%;
+                    width: 80%;
+                    height: 80%;
+                }
             }
             .new-features {
                 position: absolute;
                 width: 100%;
-                height: 100%;
-                bottom: 0;
+                height: 92%;
+                top: 0;
                 background-color: rgba(0, 0, 0, .9);
                 opacity: 0;
                 transition: .3s ease-in-out;
+                @media (max-width: 768px) {
+                    left: 77px;
+                    width: 80%;
+                    height: 96%;
+                }
+                @media (max-width: 414px) {
+                    left: 42px;
+                    height: 93%;
+                }
+                @media (max-width: 320px) {
+                    left: 32px;
+                    width: 80%;
+                    height: 91.1%;
+                }
                 .icon {
                     position: absolute;
                     top: 20px;
                     color: #999;
-                    i {
-                        margin-right: 10px;
-                        transition: .3s ease-in-out;
+                    @media (max-width: 768px) {
+                        top: 15%;
+                        font-size: 20px;
+                    }
+                    @media (max-width: 414px) {
+                        top: 7%;
+                    }
+                    @media (max-width: 414px) {
+                        top: 5%;
+                        font-size: 15px;
                     }
                 }
                 p,
                 span {
                     position: absolute;
-                    bottom: 50px;
+                    top: 60px;
                     padding: 0 40px;
                     font-size: 15px;
                     font-weight: 300;
                     color: #999;
+                    @media (max-width: 768px) {
+                        top: 40%;
+                        font-size: 25px;
+                    }
+                    @media (max-width: 414px) {
+                        top: 22%;
+                        font-size: 18px;
+                    }
+                    @media (max-width: 320px) {
+                        top: 20%;
+                        font-size: 15px;
+                    }
                 }
                 span {
-                    bottom: 20px;
+                    top: 230px;
+                    @media (max-width: 768px) {
+                        top: 80%;
+                    }
+                    @media (max-width: 320px) {
+                        top: 85%;
+                    }
                 }
             }
         }
@@ -1016,6 +1004,7 @@
             margin-bottom: 30px;
             border-bottom: 1px solid #999;
             background-color: transparent;
+            transition: .3s ease-in-out;
             &:focus {
                 border-bottom: 1px solid $mainColor;
             }

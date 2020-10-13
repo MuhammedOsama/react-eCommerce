@@ -16,11 +16,11 @@ const App = () => {
       <BrowserRouter>
         <MainNavbar />
         <Route path="/" exact component={Home} />
-        <Route path="/salesPage" exact component={SalesPage} />
-        <Route path="/featuresPage" exact component={FeaturesPage} />
-        <Route path="/blogPage" exact component={BlogPage} />
-        <Route path="/aboutPage" exact component={AboutPage} />
-        <Route path="/contactPage" exact component={ContactPage} />
+        <Route path="/sale-page" exact component={SalesPage} />
+        <Route path="/features-page" exact component={FeaturesPage} />
+        <Route path="/blog-page" exact component={BlogPage} />
+        <Route path="/about-page" exact component={AboutPage} />
+        <Route path="/contact-page" exact component={ContactPage} />
         <Footer />
       </BrowserRouter>
     </div>
