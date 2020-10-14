@@ -51,7 +51,7 @@ const CountDown = () => {
                     <div className="col-lg-6 col-12">
                         {items.map((item, id) => {
                             return(
-                                <div key={id} className="hov-img pos-relative">
+                                <div key={id} className="hov-img-zoom pos-relative">
                                     <img src={item.image} alt={item.alter} />
                                     <div className="carousel-caption beauty">
                                         <h3>{item.header}</h3>
@@ -66,7 +66,7 @@ const CountDown = () => {
                     <div className="col-lg-6 col-12">
                         {count.map((item, id) => {
                             return(
-                                <div key={id} className="hov-img pos-relative">
+                                <div key={id} className="hov-img-zoom pos-relative">
                                     <img src={item.image} alt={item.alter} />
                                     <div className="carousel-caption glass">
                                         <label>{item.details}</label>

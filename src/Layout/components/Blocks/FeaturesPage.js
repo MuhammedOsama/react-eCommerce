@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Image, Dropdown, Container } from 'react-bootstrap';
 
 class CartProducts extends Component {
 
@@ -11,27 +12,27 @@ class CartProducts extends Component {
     }
 
     CountUp = () => {
-        const {counter} = this.state
+        const {counter} = this.state;
         this.setState({counter: counter + 1})
     }
 
     CountDown = () => {
-        const {counter} = this.state
-        if(counter===1) {
+        const {counter} = this.state;
+        if(counter === 1) {
             return;
         } else {
-            this.setState({count: counter - 1})
+            this.setState({counter: counter - 1})
         }
     }
 
     Up = () => {
-        const {count} = this.state
-        this.setState({counter: count + 1})
+        const {count} = this.state;
+        this.setState({count: count + 1})
     }
 
     Down = () => {
-        const {count} = this.state
-        if(count===1) {
+        const {count} = this.state;
+        if(count === 1) {
             return;
         } else {
             this.setState({count: count - 1})
@@ -44,62 +45,54 @@ class CartProducts extends Component {
                 <div className="cover">
                     <h2>Cart</h2>
                 </div>
+                <Container>
+                    <div className="table">
+                        <table>
+                            <thead>
+                                <td></td>
+                                <td>Product</td>
+                                <td>Price</td>
+                                <td>Quantity</td>
+                                <td>Total</td>
+                            </thead>
+                            <tr className="table-row">
+                                <th className="img"><Image src="./item-10.jpg" /></th>
+                                <th><h6>Men T-Shirt</h6></th>
+                                <th><label htmlFor="#">$36.00</label></th>
+                                <th>
+                                    <div className="quantity">
+                                        <button onClick={this.CountDown}>-</button>
+                                        <button className="counter">{this.state.counter}</button>
+                                        <button onClick={this.CountUp}>+</button>
+                                    </div>
+                                </th>
+                                <th><label htmlFor="#" className="price">$36.00</label></th>
+                            </tr>
+                            <tr className="table-row">
+                                <th className="img"><Image src="./item-05.jpg" /></th>
+                                <th><h6>Mug Adventure</h6></th>
+                                <th><label htmlFor="#">$16.00</label></th>
+                                <th>
+                                    <div className="quantity">
+                                        <button onClick={this.Down}>-</button>
+                                        <button className="counter">{this.state.count}</button>
+                                        <button onClick={this.Up}>+</button>
+                                    </div>
+                                </th>
+                                <th><label htmlFor="#" className="price">$16.00</label></th>
+                            </tr>
+                        </table>
+                        <div className="table-footer">
+                            <div className="main-table-footer">
+                                <input type="text" placeholder="Coupon Code" />
+                                <button>Apply Coupon</button>
+                                <button className="cart-update-btn">Update Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </Container>
                 <div className="container">
                     <div className="row">
-                        <table className="table-cart">
-                            <tbody>
-                                <tr className="table-head">
-                                    <td className="column-1"></td>
-                                    <td className="column-2">Products</td>
-                                    <td className="column-3">Price</td>
-                                    <td className="column-4">Quantity</td>
-                                    <td className="column-5">Total</td>
-                                </tr>
-                                <tr className="table-row">
-                                    <th className="column-1"> 
-                                        <div className="cart-img-1"></div>
-                                    </th>
-                                    <th className="column-2">Men T-shirt</th>
-                                    <th className="column-3">$36.00</th>
-                                    <th className="column-4">
-                                        <div className="quantity">
-                                            <span className="sign-1" onClick={this.CountDown}> - </span>
-                                            <span> {this.state.counter} </span>
-                                            <span className="sign-2" onClick={this.CountUp}> + </span>
-                                        </div>
-                                    </th>
-                                    <th className="column-5">$36.00</th>
-                                </tr>
-                                <tr className="table-row">
-                                    <th className="column-1"> 
-                                        <div className="cart-img-2"></div>
-                                    </th>
-                                    <th className="column-2">Mug Adventure</th>
-                                    <th className="column-3">$16.00</th>
-                                    <th className="column-4">
-                                        <div className="quantity">
-                                            <span className="sign-1" onClick={this.Down}> - </span>
-                                            <span> {this.state.count} </span>
-                                            <span className="sign-2" onClick={this.Up}> + </span>
-                                        </div>
-                                    </th>
-                                    <th className="column-5">%16.00</th>
-                                </tr>
-                                <tr className="table-footer">
-                                    <th className="column-1">
-                                        <input type="text" placeholder="Coupon Code" />
-                                    </th>
-                                    <th className="column-2">
-                                        <button>Apply Code</button>
-                                    </th>
-                                    <th className="column-3"></th>
-                                    <th className="column-4"></th>
-                                    <th className="column-5">
-                                        <button>Update Cart</button>
-                                    </th>
-                                </tr>
-                            </tbody>
-                        </table>
                         <div className="col-8 d-md-block d-none"></div>
                         <div className="col-lg-4 col-12 inner-cart">
                             <h5>Cart Totals</h5>
@@ -115,19 +108,25 @@ class CartProducts extends Component {
                                 <div className="calc">
                                     <span>Calculate Shipping</span>
                                     <div className="select">
-                                        <ul>
-                                            <li>Select a country...</li>
-                                            <li className="country">US</li>
-                                            <li className="country">UK</li>
-                                            <li className="country">Japan</li>
-                                        </ul>
+                                        <Dropdown className="dropdown">
+                                            <Dropdown.Toggle variant="success" id="dropdown-basic">
+                                                Select a country...
+                                            </Dropdown.Toggle>
+
+                                            <Dropdown.Menu>
+                                                <Dropdown.Item className="items active" href="#/action-2">Select a country...</Dropdown.Item>
+                                                <Dropdown.Item className="items" href="#/action-2">US</Dropdown.Item>
+                                                <Dropdown.Item className="items" href="#/action-3">UK</Dropdown.Item>
+                                                <Dropdown.Item className="items" href="#/action-3">Japan</Dropdown.Item>
+                                            </Dropdown.Menu>
+                                        </Dropdown>
                                         <input type="text" placeholder="State / Country" />
                                         <input type="text" placeholder="Postcode / Zip" />
-                                        <button>Update Totals</button>
                                         <div className="inner-total">
+                                        <button className="update">Update Totals</button>
                                             <span className="name">Total:</span>
                                             <span className="salary"> $39.00</span>
-                                            <button>Proceed To Checkout</button>
+                                            <button className="update">Proceed To Checkout</button>
                                         </div>
                                     </div>
                                 </div>
