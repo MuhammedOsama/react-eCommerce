@@ -13,7 +13,13 @@ class MainNavbar extends Component {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mr-auto links">
-                            <Nav.Link href="/"><Link to="/">Home</Link></Nav.Link>
+                            <Nav.Link href="/"><Link to="/">Home
+                                <ul className="dropdown">
+                                    <li>HomePage V1</li>
+                                    <li>HomePage V2</li>
+                                    <li>HomePage V3</li>
+                                </ul>
+                            </Link></Nav.Link>
                             <Nav.Link href="/"><Link to="/sale-page">Shop</Link></Nav.Link>
                             <Nav.Link href="/"><Link to="/sale-page" className="sale">Sale</Link></Nav.Link>
                             <Nav.Link href="/"><Link to="/features-page">Features</Link></Nav.Link>

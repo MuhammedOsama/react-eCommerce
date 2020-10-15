@@ -10,13 +10,34 @@
             margin: 0;
         }
     }
-    .links {
-        a {
-            color: #222;
-            margin: 0 10px;
+    a {
+        color: #222;
+        margin: 0 10px;
+        &:hover {
+            .dropdown {
+                display: block;
+            }
         }
-        .sale {
-            color: $mainColor
+    }
+    .sale {
+        color: $mainColor
+    }
+    .dropdown {
+        position: absolute;
+        width: 200px;
+        top: 70%;
+        display: none;
+        background-color: #222;
+        color: #FFF;
+        padding: 10px 30px 10px 20px;
+        margin: 10px 0;
+        li {
+            margin: 10px 0;
+            transition: .3s ease-in-out;
+            &:hover {
+                text-decoration: none;
+                color: $mainColor;
+            }
         }
     }
     .inner-sales {
