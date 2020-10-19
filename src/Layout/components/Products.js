@@ -12,7 +12,7 @@ class Products extends Component {
                 {image: "./item-02.jpg", alter: "Bags", link: "Add To Cart", desc: "Herschel Supply Co 25l", span: "$75.00"},
                 {image: "./item-03.jpg", alter: "Jacket", link: "Add To Cart", desc: "Denim jacket blue", span: "$92.50"},
                 {image: "./item-05.jpg", alter: "Watches", link: "Add To Cart", desc: "Coach slim easton black", span: "$165.90"},
-                {image: "./item-07.jpg", alter: "Shorts", link: "Add To Cart", desc: "Frayed denim Shorts", color:"diff", del: "29.50", span: " $15.90"}
+                {image: "./item-07.jpg", alter: "Shorts", link: "Add To Cart", desc: "Frayed denim Shorts", color:"diff", del: "$29.50", span: " $15.90"}
             ]
         }
     }
