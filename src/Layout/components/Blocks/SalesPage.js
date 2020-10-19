@@ -7,6 +7,21 @@ const SalesPage = () => {
 
     const [ value, setValue ] = useState(0);
 
+    // const items = [
+    //     {classname: "feature-img new-product", classicon: "icon", far: "far fa-heart", fas: "fas fa-heart", classimg: "w-100", image: "./item-02.jpg", alter: "Herschel", classbtn: "cart-btn", btn: "Add To Cart", link: "Herschel supply co 25I", price: "$75.00"},
+    //     {classname: "feature-img new-product", classicon: "icon", far: "far fa-heart", fas: "fas fa-heart", classimg: "w-100", image: "./item-03.jpg", alter: "Herschel", classbtn: "cart-btn", btn: "Add To Cart", link: "Herschel supply co 25I", price: "$75.00"},
+    //     {classname: "feature-img new-product", classicon: "icon", far: "far fa-heart", fas: "fas fa-heart", classimg: "w-100", image: "./item-05.jpg", alter: "Herschel", classbtn: "cart-btn", btn: "Add To Cart", link: "Coach slim easton black", price: "$75.00"},
+    //     {classname: "feature-img new-product", classicon: "icon", far: "far fa-heart", fas: "fas fa-heart", classimg: "w-100", image: "./item-07.jpg", alter: "Herschel", classbtn: "cart-btn", btn: "Add To Cart", link: "Frayed denim shorts", price: "$75.00"},
+    //     {classname: "feature-img new-product", classicon: "icon", far: "far fa-heart", fas: "fas fa-heart", classimg: "w-100", image: "./item-01.jpg", alter: "Herschel", classbtn: "cart-btn", btn: "Add To Cart", link: "Herschel supply co 25I", price: "$75.00"},
+    //     {classname: "feature-img new-product", classicon: "icon", far: "far fa-heart", fas: "fas fa-heart", classimg: "w-100", image: "./item-14.jpg", alter: "Herschel", classbtn: "cart-btn", btn: "Add To Cart", link: "Denim jacket blue", price: "$75.00"},
+    //     {classname: "feature-img new-product", classicon: "icon", far: "far fa-heart", fas: "fas fa-heart", classimg: "w-100", image: "./item-06.jpg", alter: "Herschel", classbtn: "cart-btn", btn: "Add To Cart", link: "Herschel supply co 25I", price: "$75.00"},
+    //     {classname: "feature-img new-product", classicon: "icon", far: "far fa-heart", fas: "fas fa-heart", classimg: "w-100", image: "./item-08.jpg", alter: "Herschel", classbtn: "cart-btn", btn: "Add To Cart", link: "Denim jacket blue", price: "$75.00"},
+    //     {classname: "feature-img new-product", classicon: "icon", far: "far fa-heart", fas: "fas fa-heart", classimg: "w-100", image: "./item-10.jpg", alter: "Herschel", classbtn: "cart-btn", btn: "Add To Cart", link: "Coach slim easton black", price: "$75.00"},
+    //     {classname: "feature-img new-product", classicon: "icon", far: "far fa-heart", fas: "fas fa-heart", classimg: "w-100", image: "./item-11.jpg", alter: "Herschel", classbtn: "cart-btn", btn: "Add To Cart", link: "Frayed denim shorts", price: "$75.00"},
+    //     {classname: "feature-img new-product", classicon: "icon", far: "far fa-heart", fas: "fas fa-heart", classimg: "w-100", image: "./item-12.jpg", alter: "Herschel", classbtn: "cart-btn", btn: "Add To Cart", link: "Herschel supply co 25I", price: "$75.00"},
+    //     {classname: "feature-img new-product", classicon: "icon", far: "far fa-heart", fas: "fas fa-heart", classimg: "w-100", image: "./item-15.jpg", alter: "Herschel", classbtn: "cart-btn", btn: "Add To Cart", link: "Denim jacket blue", price: "$75.00"}
+    // ]
+
     return(
         <div id="sales">
             <div className="cover">
@@ -84,7 +99,7 @@ const SalesPage = () => {
                         </div>
                         <div className="row">
                             <div className="col-md-4">
-                                <div className="feature-img new-product">
+                            <div className="feature-img new-product">
                                     <div className="icon">
                                         <i className="far fa-heart"></i>
                                         <i className="fas fa-heart"></i>
@@ -226,10 +241,6 @@ const SalesPage = () => {
                                 </div>
                                 <a href="/">Denim jacket blue</a>
                                 <span>$92.50</span>
-                            </div>
-                            <div className="col-md-4">
-                                <button className="btn-1">1</button>
-                                <button>2</button>
                             </div>
                         </div>
                     </div>

@@ -469,35 +469,6 @@
                 del {
                     color: #555;
                 }
-                button {
-                    margin-right: 10px;
-                    width: 12%;
-                    height: 45%;
-                    outline: none;
-                    background-color: transparent;
-                    border: 1px solid #888;
-                    border-radius: 50%;
-                    transition: .3s ease-in-out;
-                    margin-bottom: 40px;
-                    &:hover {
-                        color: #FFF;
-                        background-color: #222;
-                    }
-                    @media (max-width: 768px) {
-                        width: 20%;
-                        height: 48%;
-                    }
-                    @media (max-width: 414px) {
-                        width: 7%;
-                    }
-                    @media (max-width: 320px) {
-                        width: 10%;
-                    }
-                }
-                .btn-1 {
-                    color: #FFF;
-                    background-color: #222;
-                }
             }
         }
     }
