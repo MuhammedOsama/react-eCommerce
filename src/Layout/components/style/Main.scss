@@ -68,23 +68,9 @@
                 display: none;
             }
         }
-        .cart-visible {
-            display: none;
-            &:focus {
-                display: block;
-            }
-        }
-        .icon-bag {
-            &:focus {
-                .cart-visible {
-                    display: block;
-                }
-            }
-        }
     }
 }
 
-// }
 // End Navbar
 // Start Carousel
 #main-carousel {

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 import Container from 'react-bootstrap/Container';
@@ -8,14 +8,15 @@ class Products extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            items: [
+            items : [
                 {image: "./item-02.jpg", alter: "Bags", link: "Add To Cart", desc: "Herschel Supply Co 25l", span: "$75.00"},
                 {image: "./item-03.jpg", alter: "Jacket", link: "Add To Cart", desc: "Denim jacket blue", span: "$92.50"},
                 {image: "./item-05.jpg", alter: "Watches", link: "Add To Cart", desc: "Coach slim easton black", span: "$165.90"},
-                {image: "./item-07.jpg", alter: "Shorts", link: "Add To Cart", desc: "Frayed denim Shorts", color:"diff", del: "29.50", span: " $15.90"}
+                {image: "./item-07.jpg", alter: "Shorts", link: "Add To Cart", desc: "Frayed denim Shorts", color:"diff", del: "$29.50", span: " $15.90"}
             ]
         }
     }
+        
     
     state = { galleryItems: [4], currentIndex: 0};
 
@@ -32,7 +33,7 @@ class Products extends Component {
     slidePrev = () => this.setState({ currentIndex: this.state.currentIndex - 1 });
 
     render() {
-        const { galleryItems, currentIndex } = this.state;
+        const {galleryItems, currentIndex} = this.state;
         return (
             <div id="products">
                 <div className="header">

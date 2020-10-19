@@ -3,7 +3,7 @@ import { Dropdown } from 'react-bootstrap';
 import 'react-bootstrap-range-slider/dist/react-bootstrap-range-slider.css';
 import RangeSlider from 'react-bootstrap-range-slider';
 
-const SalesPage = () => {
+export default () => {
 
     const [ value, setValue ] = useState(0);
 
@@ -84,7 +84,7 @@ const SalesPage = () => {
                         </div>
                         <div className="row">
                             <div className="col-md-4">
-                                <div className="feature-img new-product">
+                            <div className="feature-img new-product">
                                     <div className="icon">
                                         <i className="far fa-heart"></i>
                                         <i className="fas fa-heart"></i>
@@ -227,10 +227,6 @@ const SalesPage = () => {
                                 <a href="/">Denim jacket blue</a>
                                 <span>$92.50</span>
                             </div>
-                            <div className="col-md-4">
-                                <button className="btn-1">1</button>
-                                <button>2</button>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -238,5 +234,3 @@ const SalesPage = () => {
         </div>
     );
 }
-
-export default SalesPage;
