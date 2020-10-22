@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import firebase  from "./firebase/Config";
 
 const CountDown = () => {
 
@@ -9,6 +10,20 @@ const CountDown = () => {
     const count = [
         {image: "./shop-item-09.jpg", alter: "Glass", details: "Gafas sol Hawkers one", del:"$29.50", price: "$15.90"}
     ]
+
+    // const [items, setItems] = useState([]);
+    // const [count, setCountItems] = useState([]);
+    //
+    // useEffect(() => {
+    //     firebase.database().ref("CountDown").once('value').then(response => {
+    //         let countDown = [];
+    //         response.forEach(item => {
+    //             countDown.push(item.val());
+    //         });
+    //         setItems(countDown),
+    //         setCountItems(countDown);
+    //     }).catch((err) => console.log(err));
+    // }, [items, count]);
 
     const [timerDays, setTimerDays] = useState('00');
     const [timerHrs, setTimerHrs] = useState('00');

@@ -16,7 +16,7 @@ export default () => {
                     {items.map((item, id) => {
                         return(
                             <div key={id} className="col-lg-6 col-12">
-                                <iframe src={item.map}></iframe>
+                                <iframe title="map" src={item.map}></iframe>
                             </div>
                         );
                     })}

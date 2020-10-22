@@ -1,23 +1,27 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 import Container from 'react-bootstrap/Container';
+import firebase from "./firebase/Config";
 
 class Products extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {
-            items : [
-                {image: "./item-02.jpg", alter: "Bags", link: "Add To Cart", desc: "Herschel Supply Co 25l", span: "$75.00"},
-                {image: "./item-03.jpg", alter: "Jacket", link: "Add To Cart", desc: "Denim jacket blue", span: "$92.50"},
-                {image: "./item-05.jpg", alter: "Watches", link: "Add To Cart", desc: "Coach slim easton black", span: "$165.90"},
-                {image: "./item-07.jpg", alter: "Shorts", link: "Add To Cart", desc: "Frayed denim Shorts", color:"diff", del: "$29.50", span: " $15.90"}
-            ]
-        }
+        this.state = { itemsProduct : [] }
     }
-        
-    
+
+    // componentDidMount() {
+    //     firebase.database().ref("Products").on('value', snapshot => {
+    //         let itemsProduct = []
+    //         snapshot.forEach(item => {
+    //             itemsProduct.push(item.val());
+    //         });
+    //         this.setState({itemsProduct});
+    //    }).catch((err) => console.log(err));
+    // };
+
+
     state = { galleryItems: [4], currentIndex: 0};
 
     responsive = {
@@ -52,7 +56,7 @@ class Products extends Component {
                         slideToIndex={currentIndex}
                         onSlideChanged={this.onSlideChange}
                     >
-                        {this.state.items.map((item, id) => {
+                        {this.state.itemsProduct.map((item, id) => {
                             return(
                                 <div key={id} className="feature">
                                     <div className="feature-img new-product">
