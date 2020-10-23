@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Image, Dropdown, Container } from 'react-bootstrap';
 
-class CartProducts extends Component {
+export default class CartProducts extends Component {
 
     constructor(props) {
         super(props);
@@ -138,5 +138,3 @@ class CartProducts extends Component {
         );
     }
 }
-
-export default CartProducts;

@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import firebase from '../firebase/Config';
 
-export default (props) =>{
+export default (props) => {
 
     const [items, setItems] = useState([]);
     const [cart, setPriceItems] = useState([]);
-    const [btn, setBtnItems] = useState([]);
 
     useEffect(() => {
 
@@ -25,15 +25,7 @@ export default (props) =>{
             setPriceItems(priceCart);
         }).catch((err) => console.log(err));
 
-        firebase.database().ref('BtnCart').once('value').then(response => {
-            let btnCart = [];
-            response.forEach(item => {
-                btnCart.push(item.val());
-            });
-            setBtnItems(btnCart);
-        }).catch((err) => console.log(err));
-
-    }, [items, cart, btn]);
+    }, [items, cart]);
   
     return <div className={"cart-dropdown"} onClick={() => props.handleCartVisibility(true)}>
         <ul className="cart-product">
@@ -61,13 +53,13 @@ export default (props) =>{
         })}
 
         <div className="cart-btn">
-            {btn.map((item, id) => {
-                return(
-                    <div key={id} className="wrap-btn">
-                        <a href="/" className="view-btn">{item.btn}</a>
-                    </div>
-                )
-            })}
+                <div className="wrap-btn">
+                    <Link to="/features-page" className="view-btn">View Cart</Link>
+                </div>
+            <div className="wrap-btn">
+                <a href="/" className="btn">Check Out</a>
+            </div>
         </div>
+
     </div>
 }
