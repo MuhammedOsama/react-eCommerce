@@ -1,39 +1,49 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button } from 'react-bootstrap';
+import firebase from "../firebase/Config";
 
 export default () => {
 
-    const items = [
-        {image: "./blog-04.jpg", alter: "Blog-1", class: "date-1", date: "28 DEC, 2020", link: "Black Friday Guide: Best Sales & Discount Codes", details: "By Admin | Cooking, Food | 8 Comments", desc: "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce eget dictum tortor. Donec dictum vitae sapien eu varius"},
-        {image: "./blog-05.jpg", alter: "Blog-2", class: "date-2", date: "26 DEC, 2020", link: "The White Sneakers Nearly Every Fashion Girls Own", details: "By Admin | Fashion, Life style | 8 Comments", desc: "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce eget dictum tortor. Donec dictum vitae sapien eu varius"},
-        {image: "./blog-08.jpg", alter: "Blog-3", class: "date-3", date: "22 DEC, 2020", link: "Black Friday Guide: Best Sales & Discount Codes", details: "By Admin | Cooking, Food | 8 Comments", desc: "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce eget dictum tortor. Donec dictum vitae sapien eu varius"},
-        {image: "./blog-02.jpg", alter: "Blog-4", class: "date-4", date: "18 DEC, 2020", link: "Black Friday Guide: Best Sales & Discount Codes", details: "By Admin | Cooking, Food | 8 Comments", desc: "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce eget dictum tortor. Donec dictum vitae sapien eu varius"},
-        {image: "./blog-03.jpg", alter: "Blog-5", class: "date-5", date: "16 DEC, 2020", link: "Black Friday Guide: Best Sales & Discount Codes", details: "By Admin | Cooking, Food | 8 Comments", desc: "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce eget dictum tortor. Donec dictum vitae sapien eu varius"}
-    ]
-    const lists = [
-        {class: "dropdown-divider", className: "desc", desc: "Fashion"},
-        {class: "dropdown-divider", className: "desc", desc: "Beauty"},
-        {class: "dropdown-divider", className: "desc", desc: "Street Style"},
-        {class: "dropdown-divider", className: "desc", desc: "Life Style"},
-        {class: "dropdown-divider", className: "desc", desc: "DIY & Crafts"}
-    ]
-    const products = [
-        {image: "./item-16.jpg", alter: "Product-1", details: "White Shirt With Pleat Detail Back", price: "$19.00"},
-        {image: "./item-17.jpg", alter: "Product-2", details: "Converse All Star Hi Black Canvas", price: "$39.00"},
-        {image: "./item-08.jpg", alter: "Product-3", details: "Nixon Porter Leather Watch In Tan", price: "$17.00"},
-        {image: "./item-03.jpg", alter: "Product-4", details: "Denim jacket blue", price: "$39.00"},
-        {image: "./item-05.jpg", alter: "Product-5", details: "Nixon Porter Leather Watch In Tan", price: "$17.00"}
-    ]
-    const dates = [
-        {class: "link", link: "July 2020", num: "(9)"},
-        {class: "link", link: "June 2020", num: "(39)"},
-        {class: "link", link: "May 2020", num: "(29)"},
-        {class: "link", link: "April 2020", num: "(35)"},
-        {class: "link", link: "March 2020", num: "(22)"},
-        {class: "link", link: "February 2020", num: "(32)"},
-        {class: "link", link: "January 2020", num: "(21)"},
-        {class: "link", link: "December 2020", num: "(26)"}
-    ]
+    const [items, setItems] = useState([]);
+    const [lists, setListsItems] = useState([]);
+    const [products, setProductsItems] = useState([]);
+    const [dates, setDatesItems] = useState([]);
+
+    useEffect(() => {
+
+        firebase.database().ref('BlogPage').once('value').then(response => {
+           let blogPage = [];
+           response.forEach(item => {
+               blogPage.push(item.val());
+           });
+           setItems(blogPage);
+        }).catch((err) => console.log(err));
+
+        firebase.database().ref('ListsBlog').once('value').then(response => {
+            let listsBlogPage = [];
+            response.forEach(item => {
+                listsBlogPage.push(item.val());
+            });
+            setListsItems(listsBlogPage);
+        }).catch((err) => console.log(err));
+
+        firebase.database().ref('ProductsBlog').once('value').then(response => {
+            let productsBlogPage = [];
+            response.forEach(item => {
+                productsBlogPage.push(item.val());
+            });
+            setProductsItems(productsBlogPage);
+        }).catch((err) => console.log(err));
+
+        firebase.database().ref('DatesBlog').once('value').then(response => {
+            let datesBlogPage = [];
+            response.forEach(item => {
+                datesBlogPage.push(item.val());
+            });
+            setDatesItems(datesBlogPage);
+        }).catch((err) => console.log(err));
+
+    }, [items, lists, products, dates]);
 
     return(
         <div id="blog-page">

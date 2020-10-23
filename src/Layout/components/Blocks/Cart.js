@@ -1,21 +1,39 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import firebase from '../firebase/Config';
 
 export default (props) =>{
 
-    const items = [
-        {image: "./item-cart-01.jpg", alter:"Shirt", link: "White Shirt With Pleat Detail Back", price: "1 × $19.00"},
-        {image: "./item-cart-02.jpg", alter:"Converse", link: "Converse All Star Hi Black Canvas", price: "1 × $39.00"},
-        {image: "./item-cart-03.jpg", alter:"Nixon", link: "Nixon Porter Leather Watch In Tan", price: "1 × $17.00"}
-    ]
+    const [items, setItems] = useState([]);
+    const [cart, setPriceItems] = useState([]);
+    const [btn, setBtnItems] = useState([]);
 
-    const cart = [
-        {price: "Total: $75.00"}
-    ]
-    
-    const btn =  [
-        {btn: "View Cart"},
-        {btn: "Check Out"}
-    ]
+    useEffect(() => {
+
+        firebase.database().ref('Cart').once('value').then(response => {
+            let cart = [];
+            response.forEach(item => {
+                cart.push(item.val());
+            });
+            setItems(cart);
+        }).catch((err) => console.log(err));
+
+        firebase.database().ref('PriceCart').once('value').then(response => {
+            let priceCart = [];
+            response.forEach(item => {
+                priceCart.push(item.val());
+            });
+            setPriceItems(priceCart);
+        }).catch((err) => console.log(err));
+
+        firebase.database().ref('BtnCart').once('value').then(response => {
+            let btnCart = [];
+            response.forEach(item => {
+                btnCart.push(item.val());
+            });
+            setBtnItems(btnCart);
+        }).catch((err) => console.log(err));
+
+    }, [items, cart, btn]);
   
     return <div className={"cart-dropdown"} onClick={() => props.handleCartVisibility(true)}>
         <ul className="cart-product">

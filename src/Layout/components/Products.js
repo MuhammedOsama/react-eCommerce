@@ -1,25 +1,17 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 import Container from 'react-bootstrap/Container';
-import firebase from "./firebase/Config";
+// import firebase from "./firebase/Config";
 
 class Products extends Component {
 
     constructor(props) {
         super(props);
-        this.state = { itemsProduct : [] }
+        this.state = {
+            itemsProduct: []
+        }
     }
-
-    // componentDidMount() {
-    //     firebase.database().ref("Products").on('value', snapshot => {
-    //         let itemsProduct = []
-    //         snapshot.forEach(item => {
-    //             itemsProduct.push(item.val());
-    //         });
-    //         this.setState({itemsProduct});
-    //    }).catch((err) => console.log(err));
-    // };
 
 
     state = { galleryItems: [4], currentIndex: 0};
@@ -50,7 +42,6 @@ class Products extends Component {
                         autoPlayInterval={1000}
                         fadeOutAnimation={false}
                         dotsDisabled={true}
-                        buttonsDisabled={true}
                         touchTrackingEnabled={true}
                         mouseTrackingEnabled={true}
                         slideToIndex={currentIndex}
@@ -72,7 +63,7 @@ class Products extends Component {
                                     <div className="description">
                                         <a className="desc" href="/">{item.desc}</a>
                                         <div>
-                                        <span className={item.color}><del>{item.del}</del>{item.span}</span>
+                                            <span className={item.color}><del>{item.del}</del>{item.span}</span>
                                         </div>
                                     </div>
                                 </div>

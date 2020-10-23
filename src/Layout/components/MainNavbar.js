@@ -17,7 +17,7 @@ export default () => {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto links">
-                        <Nav.Link href="/">
+                        <Nav.Link as={Link} to="/">
                             <span>Home</span>
                             <ul className="dropdown">
                                 <li>HomePage V1</li>

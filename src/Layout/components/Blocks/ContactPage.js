@@ -1,10 +1,21 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import firebase from "../firebase/Config";
 
 export default () => {
 
-    const items = [
-        {map: "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d7427676.845545295!2d44.43396640624999!3d24.630737943760682!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sar!2seg!4v1602009296678!5m2!1sar!2seg"}
-    ]
+    const [items, setItems] = useState([]);
+
+    useEffect(() => {
+
+        firebase.database().ref("ContactPage").once('value').then(response => {
+            let contactPage = [];
+            response.forEach(item => {
+                contactPage.push(item.val());
+            });
+            setItems(contactPage);
+        }).catch((err) => console.log(err));
+
+    }, [items]);
 
     return(
         <div id="contact">

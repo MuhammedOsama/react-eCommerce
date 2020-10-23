@@ -6,6 +6,7 @@ export default () => {
     const [items, setItems] = useState([]);
 
     useEffect(() => {
+
         firebase.database().ref("Blog").once('value').then(response => {
             let blog = [];
             response.forEach(item => {
@@ -13,6 +14,7 @@ export default () => {
             });
             setItems(blog);
         }).catch((err) => console.log(err));
+
     }, [items]);
 
     return(
