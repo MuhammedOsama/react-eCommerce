@@ -6,7 +6,7 @@ import CountDown from './Layout/components/CountDown';
 import Blog from './Layout/components/Blog';
 // import Features from './Layout/components/Features';
 
-const Home = () => {
+export default () => {
   return (
     <div className="App">
       <MainCarousel />
@@ -18,5 +18,3 @@ const Home = () => {
     </div>
   );
 }
-
-export default Home;
