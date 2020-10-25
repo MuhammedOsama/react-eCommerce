@@ -85,7 +85,7 @@ export default () => {
                                 <div key={id} className="flex">
                                     <img src={item.image} alt={item.alter} />
                                     <p>
-                                        <span>{item.details}</span>
+                                        <span>{item.desc}</span>
                                         <label htmlFor="/">{item.price}</label>
                                     </p>
                                 </div>

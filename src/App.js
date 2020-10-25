@@ -8,9 +8,12 @@ import BlogPage from './Layout/components/Blocks/BlogPage'
 import AboutPage from './Layout/components/Blocks/AboutPage'
 import ContactPage from './Layout/components/Blocks/ContactPage'
 import Footer from './Layout/components/Footer';
+import Login from '../src/Layout/components/Blocks/Login';
+import Register from '../src/Layout/components/Blocks/Register';
+import Reset from '../src/Layout/components/Blocks/Reset';
 
 
-const App = () => {
+export default () => {
   return (
     <div className="App">
       <BrowserRouter>
@@ -21,10 +24,11 @@ const App = () => {
         <Route path="/blog-page" exact component={BlogPage} />
         <Route path="/about-page" exact component={AboutPage} />
         <Route path="/contact-page" exact component={ContactPage} />
+        <Route path="/login" exact component={Login} />
+        <Route path="/register" exact component={Register} />
+        <Route path="/reset" exact component={Reset} />
         <Footer />
       </BrowserRouter>
     </div>
   );
 }
-
-export default App;

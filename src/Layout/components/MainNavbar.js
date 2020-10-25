@@ -34,7 +34,7 @@ export default () => {
                     </Nav>
                     <Form inline>
                         <div className="inner-sales">
-                            <img src="./icon-header-01.png" alt="Icon" className="icon-personal" />
+                            <Link to="/login"><img src="./icon-header-01.png" alt="Icon" className="icon-personal" /></Link>
                             <span className="divider"></span>
                             <img src="./icon-header-02.png" alt="Icon" className="icon-bag" onClick={() => {
                                 cartVisibility ? setCartVisibility(false) : setCartVisibility(true)

@@ -1,33 +1,36 @@
 import React, { useState } from 'react';
 import { Image, Dropdown, Container } from 'react-bootstrap';
 
-export default (props) => {
+export default () => {
+
+    const [counter, setCounter] = useState(1);
+
+    const CounterUp = () => {
+        setCounter( counter + 1);
+    }
+
+    const CounterDown = () => {
+        if(counter === 1) {
+            return;
+        } else {
+        setCounter( counter - 1);
+        }
+    }
+
 
     const [count, setCount] = useState(1);
-    const counter = 1
-    // const CountUp = (props) => {
-    //     useState({counter: this.counter + 1})
-    // }
-    //
-    // const CountDown = (props) => {
-    //     if(counter === 1) {
-    //         return;
-    //     } else {
-    //         useState({counter: this.counter - 1})
-    //     }
-    // }
-    //
-    // const Up = () => {
-    //     useState({count: this.count + 1})
-    // }
-    //
-    // const Down = () => {
-    //     if(count === 1) {
-    //         return;
-    //     } else {
-    //         useState({count: this.count - 1})
-    //     }
-    // }
+
+    const countUp = () => {
+        setCount( count + 1);
+    }
+
+    const countDown = () => {
+        if(count === 1) {
+            return;
+        } else {
+            setCount(count - 1);
+        }
+    }
 
     return(
         <div id="cart-products">
@@ -50,26 +53,26 @@ export default (props) => {
                             <th><label htmlFor="#">$36.00</label></th>
                             <th>
                                 <div className="quantity">
-                                    <button onClick={() => setCount(count + 1)}>-</button>
+                                    <button onClick={CounterDown}>-</button>
                                     <button className="counter">{counter}</button>
-                                    <button onClick={() => setCount(count - 1)}>+</button>
+                                    <button onClick={CounterUp}>+</button>
                                 </div>
                             </th>
                             <th><label htmlFor="#" className="price">$36.00</label></th>
                         </tr>
-                        {/*<tr className="table-row">*/}
-                        {/*    <th className="img"><Image src="./item-05.jpg" /></th>*/}
-                        {/*    <th><h6>Mug Adventure</h6></th>*/}
-                        {/*    <th><label htmlFor="#">$16.00</label></th>*/}
-                        {/*    <th>*/}
-                        {/*        <div className="quantity">*/}
-                        {/*            <button onClick={Down}>-</button>*/}
-                        {/*            <button className="counter">{count}</button>*/}
-                        {/*            <button onClick={Up}>+</button>*/}
-                        {/*        </div>*/}
-                        {/*    </th>*/}
-                        {/*    <th><label htmlFor="#" className="price">$16.00</label></th>*/}
-                        {/*</tr>*/}
+                        <tr className="table-row">
+                            <th className="img"><Image src="./item-05.jpg" /></th>
+                            <th><h6>Mug Adventure</h6></th>
+                            <th><label htmlFor="#">$16.00</label></th>
+                            <th>
+                                <div className="quantity">
+                                    <button onClick={countDown}>-</button>
+                                    <button className="counter">{count}</button>
+                                    <button onClick={countUp}>+</button>
+                                </div>
+                            </th>
+                            <th><label htmlFor="#" className="price">$16.00</label></th>
+                        </tr>
                     </table>
                     <div className="table-footer">
                         <div className="main-table-footer">
