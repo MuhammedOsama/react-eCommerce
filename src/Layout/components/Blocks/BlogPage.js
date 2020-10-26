@@ -4,10 +4,34 @@ import firebase from "../firebase/Config";
 
 export default () => {
 
+    const lists = [
+        {className: "desc", details: "Fashion", class: "dropdown-divider"},
+        {className: "desc", details: "Beauty", class: "dropdown-divider"},
+        {className: "desc", details: "Street Style", class: "dropdown-divider"},
+        {className: "desc", details: "Life Style", class: "dropdown-divider"},
+        {className: "desc", details: "DIY & Crafts", class: "dropdown-divider"}
+    ]
+
+    const products = [
+        {image: "./item-16.jpg", alter: "Product-1", desc: "White Shirt With Pleat Detail Back", price: "$19.00"},
+        {image: "./item-17.jpg", alter: "Product-2", desc: "Converse All Star Hi Black Canvas", price: "$39.00"},
+        {image: "./item-08.jpg", alter: "Product-3", desc: "Nixon Porter Leather Watch In Tan", price: "$17.00"},
+        {image: "./item-03.jpg", alter: "Product-4", desc: "Denim jacket blue", price: "$39.00"},
+        {image: "./item-05.jpg", alter: "Product-5", desc: "Nixon Porter Leather Watch In Tan", price: "$17.00"}
+    ]
+
+    const dates = [
+        {class: "link", link: "July 2020", num: "(9)"},
+        {class: "link", link: "June 2020", num: "(39)"},
+        {class: "link", link: "May 2020", num: "(29)"},
+        {class: "link", link: "April 2020", num: "(35)"},
+        {class: "link", link: "March 2020", num: "(22)"},
+        {class: "link", link: "February 2020", num: "(32)"},
+        {class: "link", link: "January 2020", num: "(21)"},
+        {class: "link", link: "December 2020", num: "(26)"}
+    ]
+
     const [items, setItems] = useState([]);
-    const [lists, setListsItems] = useState([]);
-    const [products, setProductsItems] = useState([]);
-    const [dates, setDatesItems] = useState([]);
 
     useEffect(() => {
 
@@ -19,31 +43,7 @@ export default () => {
            setItems(blogPage);
         }).catch((err) => console.log(err));
 
-        firebase.database().ref('ListsBlog').once('value').then(response => {
-            let listsBlogPage = [];
-            response.forEach(item => {
-                listsBlogPage.push(item.val());
-            });
-            setListsItems(listsBlogPage);
-        }).catch((err) => console.log(err));
-
-        firebase.database().ref('ProductsBlog').once('value').then(response => {
-            let productsBlogPage = [];
-            response.forEach(item => {
-                productsBlogPage.push(item.val());
-            });
-            setProductsItems(productsBlogPage);
-        }).catch((err) => console.log(err));
-
-        firebase.database().ref('DatesBlog').once('value').then(response => {
-            let datesBlogPage = [];
-            response.forEach(item => {
-                datesBlogPage.push(item.val());
-            });
-            setDatesItems(datesBlogPage);
-        }).catch((err) => console.log(err));
-
-    }, [items, lists, products, dates]);
+    }, [items]);
 
     return(
         <div id="blog-page">
@@ -74,23 +74,23 @@ export default () => {
                             {lists.map((item, id) => {
                                 return(
                                     <div key={id}>
-                                        <p className={item.className}>{item.desc}</p>
+                                        <p className={item.className}>{item.details}</p>
                                         <div className={item.class}></div>
                                     </div>
                                 );
                             })}
                         <h4>Featured Products</h4>
-                        {products.map((item, id) => {
-                            return(
-                                <div key={id} className="flex">
-                                    <img src={item.image} alt={item.alter} />
-                                    <p>
-                                        <span>{item.desc}</span>
-                                        <label htmlFor="/">{item.price}</label>
-                                    </p>
-                                </div>
-                            );
-                        })}
+                            {products.map((item, id) => {
+                                return(
+                                    <div key={id} className="flex">
+                                        <img src={item.image} alt={item.alter} />
+                                        <p>
+                                            <span>{item.desc}</span>
+                                            <label htmlFor="/">{item.price}</label>
+                                        </p>
+                                    </div>
+                                );
+                            })}
                         <div className="archive">
                             <h3>Archive</h3>
                             <div className="seasons">

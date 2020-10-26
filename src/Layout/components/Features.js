@@ -3,8 +3,13 @@ import firebase from './firebase/Config';
 
 export default () => {
 
+    const column = [
+        {header: "Free Delivery Worldwide", color: "info", para: "Click here for more info"},
+        {header: "30 Days Return", para: "Simply return it within 30 days for an exchange."},
+        {header: "Store Opening", para: "Shop open from Monday to Sunday"}
+    ]
+
     const [items, setItems] = useState([]);
-    const [column, setColItems] = useState([]);
 
     useEffect(() => {
 
@@ -16,15 +21,7 @@ export default () => {
             setItems(features);
         }).catch((err) => console.log(err));
 
-        firebase.database().ref("ColFeatures").once('value').then(response => {
-            let colFeatures = [];
-            response.forEach(items => {
-                colFeatures.push(items.val());
-            });
-            setColItems(colFeatures);
-        }).catch((err) => console.log(err));
-
-    }, [items, column]);
+    }, [items]);
 
     return(
         <div id="features">

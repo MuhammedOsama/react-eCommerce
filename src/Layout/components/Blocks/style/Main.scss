@@ -27,15 +27,15 @@
         }
     }
     @media(max-width: 768px) {
-        top: 160%;
-        right: 10px;
+        top: 20%;
+        right: 3%;
     }
     @media(max-width: 414px) {
-        right: -15%;
+        width: 270px;
     }
     @media(max-width: 320px) {
-        width: 250%;
-        right: 5px;
+        height: 250px;
+        top: 15%;
     }
     .cart-product {
         padding: 5px 0;
@@ -81,6 +81,9 @@
         padding-top: 15px;
         padding-bottom: 25px;
         padding-right: 20px;
+        @media (max-width: 320px) {
+            display: none;
+        }
     }
     .cart-btn {
         margin-bottom: 20px;
@@ -102,12 +105,11 @@
             text-transform: uppercase;
             border-radius: 30px;
             transition: .5s ease-in-out;
+            @media (max-width: 320px) {
+                display: none;
+            }
             &:hover {
                 background-color: $mainColor;
-            }
-            @media (max-width: 320px) {
-                display: block;
-                margin-bottom: 20px;
             }
         }
     }
@@ -1154,7 +1156,6 @@
                 position: relative;
                 img {
                     width: 100%;
-                    margin-bottom: 30px;
                     transition: .3s ease-in-out;
                     &:hover {
                         transform: scale(1.1, 1.1);

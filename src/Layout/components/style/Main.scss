@@ -31,6 +31,16 @@
         color: #FFF;
         padding: 10px 30px 10px 20px;
         margin: 10px 0;
+        @media (max-width: 768px) {
+            top: 17%;
+            left: 10%;
+        }
+        @media (max-width: 414px) {
+            left: 18%;
+        }
+        @media (max-width: 320px) {
+            left: 23%;
+        }
         li {
             margin: 10px 0;
             transition: .3s ease-in-out;

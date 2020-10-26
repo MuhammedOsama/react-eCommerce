@@ -4,8 +4,11 @@ import firebase from '../firebase/Config';
 
 export default (props) => {
 
+    const cart = [
+        {price: "Total: $75.00"}
+    ]
+
     const [items, setItems] = useState([]);
-    const [cart, setPriceItems] = useState([]);
 
     useEffect(() => {
 
@@ -17,15 +20,7 @@ export default (props) => {
             setItems(cart);
         }).catch((err) => console.log(err));
 
-        firebase.database().ref('PriceCart').once('value').then(response => {
-            let priceCart = [];
-            response.forEach(item => {
-                priceCart.push(item.val());
-            });
-            setPriceItems(priceCart);
-        }).catch((err) => console.log(err));
-
-    }, [items, cart]);
+    }, [items]);
   
     return <div className={"cart-dropdown"} onClick={() => props.handleCartVisibility(true)}>
         <ul className="cart-product">
@@ -44,14 +39,12 @@ export default (props) => {
                     </div>
                 )
             })}
-            
         </ul>
         {cart.map((item, id) => {
             return(
                 <div key={id} className="cart-total">{item.price}</div>
             )
         })}
-
         <div className="cart-btn">
                 <div className="wrap-btn">
                     <Link to="/features-page" className="view-btn">View Cart</Link>
