@@ -1,8 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export default () => {
-    return(
+export default (props) => {
+
+    if(props.location.pathname === "/register") {
+        props.handleUserFunction(true);
+    }
+
+    return (
         <div id="register">
             <div className="container">
                 <div className="login-form">

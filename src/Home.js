@@ -7,14 +7,14 @@ import Blog from './Layout/components/Blog';
 import Features from './Layout/components/Features';
 
 export default () => {
-  return (
-    <div className="App">
-      <MainCarousel />
-      <Categories />
-      <Products />
-      <CountDown />
-      <Blog />
-      <Features />
-    </div>
-  );
+      return (
+            <div className="App">
+                  <MainCarousel />
+                  <Categories />
+                  <Products />
+                  <CountDown />
+                  <Blog />
+                  <Features />
+            </div>
+      );
 }

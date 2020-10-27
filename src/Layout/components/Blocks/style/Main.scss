@@ -1313,6 +1313,9 @@
         text-align: center;
         border: 2px solid $mainColor;
         border-radius: 25px;
+        @media (max-width: 320px) {
+            width: 300px;
+        }
         .login-form {
             position: relative;
             padding: 60px 30px;
@@ -1335,7 +1338,6 @@
                     outline: none;
                     font-size: 14px;
                     letter-spacing: 1px;
-                    text-transform: uppercase;
                     transition: .3s ease-in-out;
                     &:focus {
                         border: 1px solid $mainColor;
@@ -1346,6 +1348,7 @@
                     background-color: $mainColor;
                     font-size: 16px;
                     border: 1px solid $mainColor;
+                    text-transform: uppercase;
                 }
             }
             a {
