@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import firebase  from "./firebase/Config";
 
-const CountDown = () => {
+export default () => {
 
     const [items, setItems] = useState([]);
     const [timerDays, setTimerDays] = useState('00');
@@ -64,7 +64,6 @@ const CountDown = () => {
                                 </div>
                             )
                         })}
-                        
                     </div>
                     <div className="col-lg-6 col-12">
                         <div className="hov-img-zoom pos-relative">
@@ -96,5 +95,3 @@ const CountDown = () => {
         </div>
     );
 }
-
-export default CountDown;

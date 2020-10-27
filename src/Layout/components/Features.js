@@ -37,7 +37,7 @@ export default () => {
                                 <img src={item.image} alt={item.alter} />
                                 <div className="features-img new-features">
                                     <span className="icon">
-                                        <i className="far fa-heart">{item.i}</i>
+                                        <i className="far fa-heart"> {item.i}</i>
                                     </span>
                                     <p>{item.details}</p>
                                     <span>{item.span}</span>
