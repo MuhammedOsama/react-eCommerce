@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 export default (props) => {
 
     if(props.location.pathname === "/reset") {
-        props.handleUserFunction(true);
+        props.handleUserFunction(false);
     }
 
     return (
