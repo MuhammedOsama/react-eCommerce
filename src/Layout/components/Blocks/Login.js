@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import { Link } from 'react-router-dom';
 import firebase from "../firebase/Config";
 
@@ -11,7 +11,7 @@ import firebase from "../firebase/Config";
 
 export default (props) => {
 
-    const [form, setForm] = useState({});
+    const [form, setForm] = useState({email: "", password: ""});
     const [error, setError] = useState("");
 
     const onLogIn = (e) => {
@@ -21,25 +21,33 @@ export default (props) => {
             "Too many unsuccessful login attempts. Please try again later.": "Please try again.",
             "There is no user record corresponding to this identifier. The user may have been deleted.": "There is no account registered with this data."
         };
-
         e.preventDefault();
         firebase
             .auth()
             .signInWithEmailAndPassword(form.email, form.password)
-            .then(() => props.history.push("/"))
+            .then(() => {
+                props.history.push("/");
+                setTimeout(() => {
+                    document.location.reload();
+                }, 500)
+            })
             .catch((err) => setError(errs[err.message]))
     };
 
-    if(props.location.pathname === "/login") {
-        props.handleUserFunction(false);
-    }
+    useEffect(() => {
+        if(props.location.pathname === "/login") {
+            props.handleUserFunction(false);
+        }
+    })
 
     return (
         <div id="login">
             <div className="container">
                 <div className="login-form">
                     <h1>Log In</h1>
-                    <span className="alert-danger">{error}</span>
+                    {error ? <div className="alert-danger" style={{borderRadius: '15px', padding: "5px 0"}}>
+                        <span>{error}</span>
+                    </div> : null}
                     <form>
                         <input type="email" placeholder="Enter E-mail" onChange={(e) => setForm({...form, email: e.target.value})} />
                         <input type="password" placeholder="Enter Password" onChange={(e) => setForm({...form, password: e.target.value})} />
