@@ -6,17 +6,15 @@ import CountDown from './Layout/components/CountDown';
 import Blog from './Layout/components/Blog';
 import Features from './Layout/components/Features';
 
-const Home = () => {
-  return (
-    <div className="App">
-      <MainCarousel />
-      <Categories />
-      <Products />
-      <CountDown />
-      <Blog />
-      <Features />
-    </div>
-  );
+export default () => {
+      return (
+            <div className="App">
+                  <MainCarousel />
+                  <Categories />
+                  <Products />
+                  <CountDown />
+                  <Blog />
+                  <Features />
+            </div>
+      );
 }
-
-export default Home;

@@ -1,21 +1,30 @@
 import React, { useState, useRef, useEffect } from 'react';
+import firebase  from "./firebase/Config";
 
-const CountDown = () => {
+export default () => {
 
-    const items = [
-        {image: "./banner-08.jpg", alter: "Beauty", header: "The Beauty", details: "LookBook", span: "View Collection"}
-    ]
-
-    const count = [
-        {image: "./shop-item-09.jpg", alter: "Glass", details: "Gafas sol Hawkers one", del:"$29.50", price: "$15.90"}
-    ]
-
+    const [items, setItems] = useState([]);
     const [timerDays, setTimerDays] = useState('00');
     const [timerHrs, setTimerHrs] = useState('00');
     const [timerMins, setTimerMins] = useState('00');
     const [timerSecs, setTimerSecs] = useState('00');
-
     let interval = useRef();
+
+    useEffect(() => {
+
+        firebase.database().ref("CountDown").once('value').then(response => {
+            let countDown = [];
+            response.forEach(item => {
+                countDown.push(item.val());
+            });
+            setItems(countDown);
+        }).catch((err) => console.log(err));
+
+        startTimer();
+        clearInterval(interval.Current);
+
+    });
+
 
     const startTimer = () => {
         const countDownDate = new Date('Dec 31 2020 00:00:00').getTime();
@@ -37,12 +46,6 @@ const CountDown = () => {
         }, 1000);
     };
 
-    useEffect(() => {
-        startTimer();
-        return () => {
-            clearInterval(interval.Current);
-        };
-    });
 
     return(
         <div id="count">
@@ -61,41 +64,34 @@ const CountDown = () => {
                                 </div>
                             )
                         })}
-                        
                     </div>
                     <div className="col-lg-6 col-12">
-                        {count.map((item, id) => {
-                            return(
-                                <div key={id} className="hov-img-zoom pos-relative">
-                                    <img src={item.image} alt={item.alter} />
-                                    <div className="carousel-caption glass">
-                                        <label>{item.details}</label>
-                                        <span><del>{item.del}</del> {item.price}</span>
-                                        <div className="timer">
-                                            <div className="count">
-                                                <section>
-                                                    <p className="num">{timerDays}<br /><small>Days</small></p>
-                                                </section>
-                                                <section>
-                                                    <p className="num">{timerHrs}<br /><small>Hours</small></p>
-                                                </section>
-                                                <section>
-                                                    <p className="num">{timerMins}<br /><small>Mins</small></p>
-                                                </section>
-                                                <section>
-                                                    <p className="num">{timerSecs}<br /><small>Secs</small></p>
-                                                </section>
-                                            </div>
-                                        </div>
+                        <div className="hov-img-zoom pos-relative">
+                            <img src="/shop-item-09.jpg" alt="Shop item" />
+                            <div className="carousel-caption glass">
+                                <label>Gafas sol Hawkers one</label>
+                                <span><del>$29.50</del> $15.90</span>
+                                <div className="timer">
+                                    <div className="count">
+                                        <section>
+                                            <p className="num">{timerDays}<br /><small>Days</small></p>
+                                        </section>
+                                        <section>
+                                            <p className="num">{timerHrs}<br /><small>Hours</small></p>
+                                        </section>
+                                        <section>
+                                            <p className="num">{timerMins}<br /><small>Mins</small></p>
+                                        </section>
+                                        <section>
+                                            <p className="num">{timerSecs}<br /><small>Secs</small></p>
+                                        </section>
                                     </div>
                                 </div>
-                            );
-                        })}
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     );
 }
-
-export default CountDown;

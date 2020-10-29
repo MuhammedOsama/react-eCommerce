@@ -1,29 +1,25 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button } from 'react-bootstrap';
+import firebase from "../firebase/Config";
 
 export default () => {
 
-    const items = [
-        {image: "./blog-04.jpg", alter: "Blog-1", class: "date-1", date: "28 DEC, 2020", link: "Black Friday Guide: Best Sales & Discount Codes", details: "By Admin | Cooking, Food | 8 Comments", desc: "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce eget dictum tortor. Donec dictum vitae sapien eu varius"},
-        {image: "./blog-05.jpg", alter: "Blog-2", class: "date-2", date: "26 DEC, 2020", link: "The White Sneakers Nearly Every Fashion Girls Own", details: "By Admin | Fashion, Life style | 8 Comments", desc: "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce eget dictum tortor. Donec dictum vitae sapien eu varius"},
-        {image: "./blog-08.jpg", alter: "Blog-3", class: "date-3", date: "22 DEC, 2020", link: "Black Friday Guide: Best Sales & Discount Codes", details: "By Admin | Cooking, Food | 8 Comments", desc: "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce eget dictum tortor. Donec dictum vitae sapien eu varius"},
-        {image: "./blog-02.jpg", alter: "Blog-4", class: "date-4", date: "18 DEC, 2020", link: "Black Friday Guide: Best Sales & Discount Codes", details: "By Admin | Cooking, Food | 8 Comments", desc: "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce eget dictum tortor. Donec dictum vitae sapien eu varius"},
-        {image: "./blog-03.jpg", alter: "Blog-5", class: "date-5", date: "16 DEC, 2020", link: "Black Friday Guide: Best Sales & Discount Codes", details: "By Admin | Cooking, Food | 8 Comments", desc: "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce eget dictum tortor. Donec dictum vitae sapien eu varius"}
-    ]
     const lists = [
-        {class: "dropdown-divider", className: "desc", desc: "Fashion"},
-        {class: "dropdown-divider", className: "desc", desc: "Beauty"},
-        {class: "dropdown-divider", className: "desc", desc: "Street Style"},
-        {class: "dropdown-divider", className: "desc", desc: "Life Style"},
-        {class: "dropdown-divider", className: "desc", desc: "DIY & Crafts"}
+        {className: "desc", details: "Fashion", class: "dropdown-divider"},
+        {className: "desc", details: "Beauty", class: "dropdown-divider"},
+        {className: "desc", details: "Street Style", class: "dropdown-divider"},
+        {className: "desc", details: "Life Style", class: "dropdown-divider"},
+        {className: "desc", details: "DIY & Crafts", class: "dropdown-divider"}
     ]
+
     const products = [
-        {image: "./item-16.jpg", alter: "Product-1", details: "White Shirt With Pleat Detail Back", price: "$19.00"},
-        {image: "./item-17.jpg", alter: "Product-2", details: "Converse All Star Hi Black Canvas", price: "$39.00"},
-        {image: "./item-08.jpg", alter: "Product-3", details: "Nixon Porter Leather Watch In Tan", price: "$17.00"},
-        {image: "./item-03.jpg", alter: "Product-4", details: "Denim jacket blue", price: "$39.00"},
-        {image: "./item-05.jpg", alter: "Product-5", details: "Nixon Porter Leather Watch In Tan", price: "$17.00"}
+        {image: "./item-16.jpg", alter: "Product-1", desc: "White Shirt With Pleat Detail Back", price: "$19.00"},
+        {image: "./item-17.jpg", alter: "Product-2", desc: "Converse All Star Hi Black Canvas", price: "$39.00"},
+        {image: "./item-08.jpg", alter: "Product-3", desc: "Nixon Porter Leather Watch In Tan", price: "$17.00"},
+        {image: "./item-03.jpg", alter: "Product-4", desc: "Denim jacket blue", price: "$39.00"},
+        {image: "./item-05.jpg", alter: "Product-5", desc: "Nixon Porter Leather Watch In Tan", price: "$17.00"}
     ]
+
     const dates = [
         {class: "link", link: "July 2020", num: "(9)"},
         {class: "link", link: "June 2020", num: "(39)"},
@@ -34,6 +30,20 @@ export default () => {
         {class: "link", link: "January 2020", num: "(21)"},
         {class: "link", link: "December 2020", num: "(26)"}
     ]
+
+    const [items, setItems] = useState([]);
+
+    useEffect(() => {
+
+        firebase.database().ref('BlogPage').once('value').then(response => {
+           let blogPage = [];
+           response.forEach(item => {
+               blogPage.push(item.val());
+           });
+           setItems(blogPage);
+        }).catch((err) => console.log(err));
+
+    }, [items]);
 
     return(
         <div id="blog-page">
@@ -64,23 +74,23 @@ export default () => {
                             {lists.map((item, id) => {
                                 return(
                                     <div key={id}>
-                                        <p className={item.className}>{item.desc}</p>
+                                        <p className={item.className}>{item.details}</p>
                                         <div className={item.class}></div>
                                     </div>
                                 );
                             })}
                         <h4>Featured Products</h4>
-                        {products.map((item, id) => {
-                            return(
-                                <div key={id} className="flex">
-                                    <img src={item.image} alt={item.alter} />
-                                    <p>
-                                        <span>{item.details}</span>
-                                        <label htmlFor="/">{item.price}</label>
-                                    </p>
-                                </div>
-                            );
-                        })}
+                            {products.map((item, id) => {
+                                return(
+                                    <div key={id} className="flex">
+                                        <img src={item.image} alt={item.alter} />
+                                        <p>
+                                            <span>{item.desc}</span>
+                                            <label htmlFor="/">{item.price}</label>
+                                        </p>
+                                    </div>
+                                );
+                            })}
                         <div className="archive">
                             <h3>Archive</h3>
                             <div className="seasons">

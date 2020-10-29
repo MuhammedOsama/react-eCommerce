@@ -27,15 +27,15 @@
         }
     }
     @media(max-width: 768px) {
-        top: 160%;
-        right: 10px;
+        top: 20%;
+        right: 3%;
     }
     @media(max-width: 414px) {
-        right: -15%;
+        width: 270px;
     }
     @media(max-width: 320px) {
-        width: 250%;
-        right: 5px;
+        height: 250px;
+        top: 15%;
     }
     .cart-product {
         padding: 5px 0;
@@ -81,6 +81,9 @@
         padding-top: 15px;
         padding-bottom: 25px;
         padding-right: 20px;
+        @media (max-width: 320px) {
+            display: none;
+        }
     }
     .cart-btn {
         margin-bottom: 20px;
@@ -91,7 +94,8 @@
         .wrap-btn {
             width: calc(100% - 10px)/2;
         }
-        .view-btn {
+        .view-btn,
+        .btn {
             text-decoration: none;
             background-color: #000;
             color: #FFF !important;
@@ -101,12 +105,11 @@
             text-transform: uppercase;
             border-radius: 30px;
             transition: .5s ease-in-out;
+            @media (max-width: 320px) {
+                display: none;
+            }
             &:hover {
                 background-color: $mainColor;
-            }
-            @media (max-width: 320px) {
-                display: block;
-                margin-bottom: 20px;
             }
         }
     }
@@ -1153,7 +1156,6 @@
                 position: relative;
                 img {
                     width: 100%;
-                    margin-bottom: 30px;
                     transition: .3s ease-in-out;
                     &:hover {
                         transform: scale(1.1, 1.1);
@@ -1298,3 +1300,76 @@
 }
 
 // End ContactPage
+// Login - Register - Reset
+#login,
+#register,
+#reset {
+    .container {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 400px;
+        text-align: center;
+        border: 2px solid $mainColor;
+        border-radius: 25px;
+        @media (max-width: 320px) {
+            width: 300px;
+        }
+        .login-form {
+            position: relative;
+            padding: 60px 30px;
+            transition: .3s ease-in-out;
+            h1 {
+                color: $mainColor;
+                font-size: 30px;
+                margin: 0 0 20px;
+                text-transform: uppercase;
+                font-weight: bold;
+            }
+            form {
+                input {
+                    display: block;
+                    width: 100%;
+                    padding: 10px 20px;
+                    margin: 10px 0 20px;
+                    border: 1px solid #DDD;
+                    border-radius: 25px;
+                    outline: none;
+                    font-size: 14px;
+                    letter-spacing: 1px;
+                    transition: .3s ease-in-out;
+                    &:focus {
+                        border: 1px solid $mainColor;
+                    }
+                }
+                input[type="submit"] {
+                    color: #FFF;
+                    background-color: $mainColor;
+                    font-size: 16px;
+                    border: 1px solid $mainColor;
+                    text-transform: uppercase;
+                }
+            }
+            a {
+                color: #222;
+                margin-bottom: 10px;
+                font-size: 15px;
+                transition: .3s ease-in-out;
+                &:hover {
+                    color: $mainColor;
+                    text-decoration: none;
+                }
+            }
+            .create-email {
+                display: block;
+                &:hover {
+                    color: #222;
+                }
+            }
+            .link {
+                color: $mainColor;
+            }
+        }
+    }
+}
