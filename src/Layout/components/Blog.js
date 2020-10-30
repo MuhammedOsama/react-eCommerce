@@ -1,12 +1,21 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import firebase from './firebase/Config';
 
 export default () => {
 
-    const items = [
-        {image: "./blog-01.jpg", alter: "Black Friday", link: "Black Friday Guide: Best Sales & Discount Codes", desc: "By Nancy Ward on July 22, 2017", details: "Duis ut velit gravida nibh bibendum commodo. Sus-pendisse pellentesque mattis augue id euismod. Inter-dum et malesuada fames"},
-        {image: "./blog-02.jpg", alter: "Black Friday", link: "The White Sneakers Nearly Every Fashion Girls Own", desc: "By Nancy Ward on July 18, 2017", details: "Nullam scelerisque, lacus sed consequat laoreet, dui enim iaculis leo, eu viverra ex nulla in tellus. Nullam nec ornare tellus, ac fringilla lacus. Ut sit ame"},
-        {image: "./blog-03.jpg", alter: "Black Friday", link: "New York SS 2018 Street Style: Annina Mislin", desc: "By Nancy Ward on July 2, 2017", details: "Proin nec vehicula lorem, a efficitur ex. Nam vehicula nulla vel erat tincidunt, sed hendrerit ligula porttitor. Fusce sit amet maximus nunc"}
-    ]
+    const [items, setItems] = useState([]);
+
+    useEffect(() => {
+
+        firebase.database().ref("Blog").once('value').then(response => {
+            let blog = [];
+            response.forEach(item => {
+                blog.push(item.val());
+            });
+            setItems(blog);
+        }).catch((err) => console.log(err));
+
+    }, [items]);
 
     return(
         <div id="blog">

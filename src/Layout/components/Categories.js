@@ -1,10 +1,10 @@
 import React from 'react';
 
 export default () => {
-    return(
+    return (
         <div id="categories">
             <div className="container">
-            <div className="row text-center">
+                <div className="row text-center">
                     <div className="col-lg-4 col-12">
                         <div className="block1 hov-img-zoom pos-relative">
                             <img className="banner" src="./banner-02.jpg" alt="Dresses"/>
@@ -33,7 +33,8 @@ export default () => {
                         <div className="block1 hov-img-zoom pos-relative">
                             <img className="bgsignup" src="./bg-01.jpg" alt="Sign Up"/>
                             <h1 className="h1">Sign Up & Get 20% Off</h1>
-                            <p className="des">Be the first to know about the latest fashion news and get exclu-sive offers</p>
+                            <p className="des">Be the first to know about the latest fashion news and get exclu-sive
+                                offers</p>
                             <button className="signup">Sign Up</button>
                         </div>
                     </div>

@@ -1,21 +1,26 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import firebase from '../firebase/Config';
 
-export default (props) =>{
-
-    const items = [
-        {image: "./item-cart-01.jpg", alter:"Shirt", link: "White Shirt With Pleat Detail Back", price: "1 × $19.00"},
-        {image: "./item-cart-02.jpg", alter:"Converse", link: "Converse All Star Hi Black Canvas", price: "1 × $39.00"},
-        {image: "./item-cart-03.jpg", alter:"Nixon", link: "Nixon Porter Leather Watch In Tan", price: "1 × $17.00"}
-    ]
+export default (props) => {
 
     const cart = [
         {price: "Total: $75.00"}
     ]
-    
-    const btn =  [
-        {btn: "View Cart"},
-        {btn: "Check Out"}
-    ]
+
+    const [items, setItems] = useState([]);
+
+    useEffect(() => {
+
+        firebase.database().ref('Cart').once('value').then(response => {
+            let cart = [];
+            response.forEach(item => {
+                cart.push(item.val());
+            });
+            setItems(cart);
+        }).catch((err) => console.log(err));
+
+    }, [items]);
   
     return <div className={"cart-dropdown"} onClick={() => props.handleCartVisibility(true)}>
         <ul className="cart-product">
@@ -34,22 +39,20 @@ export default (props) =>{
                     </div>
                 )
             })}
-            
         </ul>
         {cart.map((item, id) => {
             return(
                 <div key={id} className="cart-total">{item.price}</div>
             )
         })}
-
         <div className="cart-btn">
-            {btn.map((item, id) => {
-                return(
-                    <div key={id} className="wrap-btn">
-                        <a href="/" className="view-btn">{item.btn}</a>
-                    </div>
-                )
-            })}
+                <div className="wrap-btn">
+                    <Link to="/features-page" className="view-btn">View Cart</Link>
+                </div>
+            <div className="wrap-btn">
+                <a href="/" className="btn">Check Out</a>
+            </div>
         </div>
+
     </div>
 }

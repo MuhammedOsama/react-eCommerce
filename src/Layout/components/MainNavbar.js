@@ -17,13 +17,14 @@ export default () => {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto links">
-                        <Nav.Link href="/"><Link to="/">Home
+                        <Nav.Link as={Link} to="/">
+                            <span>Home</span>
                             <ul className="dropdown">
                                 <li>HomePage V1</li>
                                 <li>HomePage V2</li>
                                 <li>HomePage V3</li>
                             </ul>
-                        </Link></Nav.Link>
+                        </Nav.Link>
                         <Nav.Link as={Link} to="/sale-page">Shop</Nav.Link>
                         <Nav.Link as={Link} to="/sale-page" className="sale">Sale</Nav.Link>
                         <Nav.Link as={Link} to="/features-page">Features</Nav.Link>
@@ -33,7 +34,7 @@ export default () => {
                     </Nav>
                     <Form inline>
                         <div className="inner-sales">
-                            <img src="./icon-header-01.png" alt="Icon" className="icon-personal" />
+                            <Link to="/login"><img src="./icon-header-01.png" alt="Icon" className="icon-personal" /></Link>
                             <span className="divider"></span>
                             <img src="./icon-header-02.png" alt="Icon" className="icon-bag" onClick={() => {
                                 cartVisibility ? setCartVisibility(false) : setCartVisibility(true)

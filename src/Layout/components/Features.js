@@ -1,19 +1,27 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react'
+import firebase from './firebase/Config';
 
 export default () => {
 
-    const items = [
-        {image: "./gallery-03.jpg", alter: "Bag", i: " 39", details: "Nullam scelerisque, lacus sed consequat laoreet, dui enim iaculis leo, eu viverra ex nulla in tellus. Nullam nec ornare tellus, ac fringilla lacus. Ut sit amet enim orci. Nam eget metus elit.", span: "Photo by @nancyward"},
-        {image: "./gallery-07.jpg", alter: "Girl", i: " 39", details: "Nullam scelerisque, lacus sed consequat laoreet, dui enim iaculis leo, eu viverra ex nulla in tellus. Nullam nec ornare tellus, ac fringilla lacus. Ut sit amet enim orci. Nam eget metus elit.", span: "Photo by @nancyward"},
-        {image: "./gallery-09.jpg", alter: "Set", i: " 39", details: "Nullam scelerisque, lacus sed consequat laoreet, dui enim iaculis leo, eu viverra ex nulla in tellus. Nullam nec ornare tellus, ac fringilla lacus. Ut sit amet enim orci. Nam eget metus elit.", span: "Photo by @nancyward"},
-        {image: "./gallery-13.jpg", alter: "Jump", i: " 39", details: "Nullam scelerisque, lacus sed consequat laoreet, dui enim iaculis leo, eu viverra ex nulla in tellus. Nullam nec ornare tellus, ac fringilla lacus. Ut sit amet enim orci. Nam eget metus elit.", span: "Photo by @nancyward"},
-        {image: "./gallery-15.jpg", alter: "Shoes", i: " 39", details: "Nullam scelerisque, lacus sed consequat laoreet, dui enim iaculis leo, eu viverra ex nulla in tellus. Nullam nec ornare tellus, ac fringilla lacus. Ut sit amet enim orci. Nam eget metus elit.", span:"Photo by @nancyward"}
-    ]
     const column = [
         {header: "Free Delivery Worldwide", color: "info", para: "Click here for more info"},
         {header: "30 Days Return", para: "Simply return it within 30 days for an exchange."},
         {header: "Store Opening", para: "Shop open from Monday to Sunday"}
     ]
+
+    const [items, setItems] = useState([]);
+
+    useEffect(() => {
+
+        firebase.database().ref("Features").once('value').then(response => {
+            let features = [];
+            response.forEach(items => {
+                features.push(items.val());
+            });
+            setItems(features);
+        }).catch((err) => console.log(err));
+
+    }, [items]);
 
     return(
         <div id="features">
@@ -29,7 +37,7 @@ export default () => {
                                 <img src={item.image} alt={item.alter} />
                                 <div className="features-img new-features">
                                     <span className="icon">
-                                        <i className="far fa-heart">{item.i}</i>
+                                        <i className="far fa-heart"> {item.i}</i>
                                     </span>
                                     <p>{item.details}</p>
                                     <span>{item.span}</span>
