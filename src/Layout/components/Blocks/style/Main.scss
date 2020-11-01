@@ -26,12 +26,21 @@
             height: auto;
         }
     }
-    @media(max-width: 768px) {
+    @media(min-width: 1920px) {
+        top: 100%;
+        right: 1%;
+    }
+    @media(max-width: 800px) {
         top: 20%;
-        right: 3%;
+        right: 2%;
     }
     @media(max-width: 414px) {
         width: 270px;
+    }
+    @media(max-width: 375px) {
+        overflow-y: auto;
+        top: 20%;
+        height: 250px;
     }
     @media(max-width: 320px) {
         height: 250px;
@@ -81,9 +90,6 @@
         padding-top: 15px;
         padding-bottom: 25px;
         padding-right: 20px;
-        @media (max-width: 320px) {
-            display: none;
-        }
     }
     .cart-btn {
         margin-bottom: 20px;
@@ -105,9 +111,6 @@
             text-transform: uppercase;
             border-radius: 30px;
             transition: .5s ease-in-out;
-            @media (max-width: 320px) {
-                display: none;
-            }
             &:hover {
                 background-color: $mainColor;
             }
@@ -147,6 +150,12 @@
             top: 35%;
             left: 45%;
         }
+        @media (min-width: 1920px) {
+            h2 {
+                top: 30%;
+                left: 45%;
+            }
+        }
         @media (max-width: 800px) {
             h2 {
                 top: 30%;
@@ -177,6 +186,10 @@
             line-height: 1.5;
             top: 57%;
             left: 39%;
+            @media (min-width: 1920px) {
+                top: 55%;
+                left: 40%;
+            }
             @media (max-width: 800px) {
                 top: 55%;
                 left: 29%;
@@ -515,30 +528,36 @@
             text-transform: uppercase;
             line-height: 1.2;
             font-weight: 650;
-            top: 35%;
+            top: 40%;
             left: 45%;
+        }
+        @media (min-width: 1920px) {
+            h2 {
+                top: 40%;
+                left: 45%;
+            }
         }
         @media (max-width: 800px) {
             h2 {
                 top: 40%;
-                left: 40%;
+                left: 42%;
             }
         }
         @media (max-width: 414px) {
             h2 {
-                top: 30%;
+                top: 33%;
                 left: 35%;
             }
         }
         @media (max-width: 375px) {
             h2 {
                 top: 35%;
-                left: 35%;
             }
         }
         @media (max-width: 320px) {
             h2 {
-                left: 30%;
+                font-size: 35px;
+                left: 33%;
             }
         }
     }
@@ -847,16 +866,22 @@
             top: 35%;
             left: 45%;
         }
+        @media (min-width: 1920px) {
+            h2 {
+                top: 42%;
+                left: 45%;
+            }
+        }
         @media (max-width: 800px) {
             h2 {
-                top: 40%;
-                left: 40%;
+                top: 38%;
+                left: 45%;
             }
         }
         @media (max-width: 414px) {
             h2 {
                 top: 33%;
-                left: 35%;
+                left: 38%;
             }
         }
         @media (max-width: 375px) {
@@ -895,36 +920,48 @@
                 padding: 5px;
             }
             .date-1 {
-                top: 9.3%;
+                top: 9.5%;
+                // @media (min-width: 1920px) {
+                //     top: 9.5%;
+                // }
                 @media (max-width: 800px) {
-                    top: 9.1%;
+                    top: 9.2%;
                 }
                 @media (max-width: 414px) {
                     top: 5.7%;
+                }
+                @media (max-width: 375px) {
+                    top: 5.1%;
                 }
                 @media (max-width: 320px) {
                     top: 4%;
                 }
             }
             .date-2 {
-                top: 30%;
+                top: 30.2%;
                 @media (max-width: 800px) {
-                    top: 29.8%;
+                    top: 29.9%;
                 }
                 @media (max-width: 414px) {
                     top: 26.1%;
+                }
+                @media (max-width: 375px) {
+                    top: 25.5%;
                 }
                 @media (max-width: 320px) {
                     top: 24.1%;
                 }
             }
             .date-3 {
-                top: 50.6%;
+                top: 50.7%;
                 @media (max-width: 800px) {
-                    top: 50.3%;
+                    top: 50.4%;
                 }
                 @media (max-width: 414px) {
                     top: 46.4%;
+                }
+                @media (max-width: 375px) {
+                    top: 45.7%;
                 }
                 @media (max-width: 320px) {
                     top: 45.3%;
@@ -933,25 +970,31 @@
             .date-4 {
                 top: 71.3%;
                 @media (max-width: 800px) {
-                    top: 70.9%;
+                    top: 71%;
                 }
                 @media (max-width: 414px) {
                     top: 66.9%;
                 }
+                @media (max-width: 375px) {
+                    top: 66.2%;
+                }
                 @media (max-width: 320px) {
-                    top: 65.5%;
+                    top: 65.4%;
                 }
             }
             .date-5 {
-                top: 92%;
+                top: 91.9%;
                 @media (max-width: 800px) {
-                    top: 91.5%;
+                    top: 91.6%;
                 }
                 @media (max-width: 414px) {
                     top: 87.3%;
                 }
+                @media (max-width: 375px) {
+                    top: 86.5%;
+                }
                 @media (max-width: 320px) {
-                    top: 85.6%;
+                    top: 85.5%;
                 }
             }
             a {
@@ -1015,6 +1058,9 @@
                 border: 1px solid #888;
                 border-radius: 20px;
                 outline: none;
+                @media (max-width: 800px) {
+                    margin-left: 0;
+                }
                 @media (max-width: 320px) {
                     width: 230px;
                 }
@@ -1023,7 +1069,10 @@
             h5,
             a,
             .dropdown-divider {
-                margin-left: 20%
+                margin-left: 20%;
+                @media (max-width: 800px) {
+                    margin-left: 0;
+                }
             }
             h5,
             h4,
@@ -1033,6 +1082,9 @@
                 font-size: 25px;
                 font-weight: 700;
                 margin-bottom: 30px;
+                @media (max-width: 800px) {
+                    margin-left: 0;
+                }
             }
             .desc {
                 margin-left: 20%;
@@ -1040,6 +1092,9 @@
                 color: #888;
                 transition: .3s ease-in-out;
                 cursor: pointer;
+                @media (max-width: 800px) {
+                    margin-left: 0;
+                }
                 &:hover {
                     text-decoration: none;
                     color: $mainColor;
@@ -1047,6 +1102,9 @@
             }
             h4 {
                 margin: 30px 0 30px 20%;
+                @media (max-width: 800px) {
+                    margin-left: 0;
+                }
             }
             .flex {
                 display: flex;
@@ -1056,6 +1114,9 @@
                     margin-right: 20px;
                     width: 80px;
                     cursor: pointer;
+                    @media (max-width: 800px) {
+                        margin-left: 0;
+                    }
                 }
                 span {
                     display: block;
@@ -1077,6 +1138,9 @@
             }
             h3 {
                 margin: 60px 0 30px 20%;
+                @media (max-width: 800px) {
+                    margin-left: 0;
+                }
             }
             .seasons {
                 p {
@@ -1097,6 +1161,9 @@
             }
             h2 {
                 margin: 60px 0 30px 20%;
+                @media (max-width: 800px) {
+                    margin-left: 0;
+                }
             }
             button {
                 margin: 2% 0 0 3%;
@@ -1106,6 +1173,9 @@
                 border: 1px solid #888;
                 border-radius: 15px;
                 transition: .3s ease-in-out;
+                @media (max-width: 800px) {
+                    margin: 0 10px 5px 0;
+                }
                 &:hover {
                     color: $mainColor;
                     border: 1px solid $mainColor;
@@ -1145,8 +1215,13 @@
             text-transform: uppercase;
             line-height: 1.2;
             font-weight: 650;
-            top: 35%;
-            left: 45%;
+            top: 40%;
+            left: 47%;
+        }
+        @media (min-width: 1920px) {
+            h2 {
+                top: 42%;
+            }
         }
         @media (max-width: 800px) {
             h2 {
@@ -1163,12 +1238,12 @@
         @media (max-width: 375px) {
             h2 {
                 top: 35%;
-                left: 35%;
+                left: 32%;
             }
         }
         @media (max-width: 320px) {
             h2 {
-                left: 33%;
+                left: 28%;
             }
         }
     }
@@ -1241,6 +1316,11 @@
             top: 35%;
             left: 45%;
         }
+        @media (min-width: 1920px) {
+            h2 {
+                top: 40%;
+            }
+        }
         @media (max-width: 800px) {
             h2 {
                 top: 40%;
@@ -1296,7 +1376,7 @@
             input,
             textarea {
                 display: block;
-                width: 450px;
+                width: 500px;
                 padding: 15px;
                 border: 1px solid #888;
                 margin-bottom: 15px;

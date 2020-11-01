@@ -53,6 +53,5 @@ export default (props) => {
                 <a href="/" className="btn">Check Out</a>
             </div>
         </div>
-
     </div>
 }
