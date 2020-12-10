@@ -18,7 +18,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../zumer-product" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -35,6 +35,12 @@
       <option name="presentableId" value="Default" />
       <updated>1603101921635</updated>
       <workItem from="1603101923354" duration="2249000" />
+      <workItem from="1604479997560" duration="2309000" />
+      <workItem from="1604491778769" duration="819000" />
+      <workItem from="1604675518677" duration="16000" />
+      <workItem from="1604896508242" duration="2028000" />
+      <workItem from="1605099347764" duration="600000" />
+      <workItem from="1605266527688" duration="27000" />
     </task>
     <servers />
   </component>
@@ -42,10 +48,11 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1603124093374">
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1605266553085">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1603124093374" />
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728/1366.0.1440.860@0.0.1366.728" timestamp="1605266553085" />
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1604675536267" />
     <state x="183" y="8" key="SettingsEditor" timestamp="1603102288391">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -54,6 +61,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="390" y="0" width="585" height="728" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1603102614635" />
+    <state x="339" y="162" key="run.anything.popup" timestamp="1604904615102">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1604904615102" />
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1603102622845">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

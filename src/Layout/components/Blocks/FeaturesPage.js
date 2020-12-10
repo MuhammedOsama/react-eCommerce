@@ -1,35 +1,26 @@
-import React, { useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import { Image, Dropdown, Container } from 'react-bootstrap';
+import firebase from "../firebase/Config";
 
 export default () => {
+    const [items, setItems] = useState([]);
 
-    const [counter, setCounter] = useState(1);
+    useEffect(() => {
+        loadCart();
+    }, [])
 
-    const CounterUp = () => {
-        setCounter( counter + 1);
+    const loadCart = () => {
+        firebase.database().ref("cart").once('value').then(response => {
+            let products = [];
+            response.forEach(item => {
+                products.push(item.val());
+            });
+            setItems(products);
+        }).catch((err) => console.log(err));
     }
 
-    const CounterDown = () => {
-        if(counter === 1) {
-            return;
-        } else {
-        setCounter( counter - 1);
-        }
-    }
-
-
-    const [count, setCount] = useState(1);
-
-    const countUp = () => {
-        setCount( count + 1);
-    }
-
-    const countDown = () => {
-        if(count === 1) {
-            return;
-        } else {
-            setCount(count - 1);
-        }
+    const updateQuantity = (product, quantity) => {
+        firebase.database().ref('cart/'+product.id).set({product, quantity}).then(() => loadCart()).catch(err => console.log(err));
     }
 
     return(
@@ -41,38 +32,27 @@ export default () => {
                 <div className="table">
                     <table>
                         <thead>
-                            <td></td>
+                            <td> </td>
                             <td>Product</td>
                             <td>Price</td>
                             <td>Quantity</td>
                             <td>Total</td>
                         </thead>
-                        <tr className="table-row">
-                            <th className="img"><Image src="./item-10.jpg" /></th>
-                            <th><h6>Men T-Shirt</h6></th>
-                            <th><label htmlFor="#">$36.00</label></th>
+                        {items?.map(item => <tr key={item.product.id} className="table-row">
+                            <th className="img"><Image src={item.product.image} /></th>
+                            <th><h6>{item.product.desc}</h6></th>
+                            <th><label htmlFor="#">{item.product.span}</label></th>
                             <th>
                                 <div className="quantity">
-                                    <button onClick={CounterDown}>-</button>
-                                    <button className="counter">{counter}</button>
-                                    <button onClick={CounterUp}>+</button>
+                                    <button onClick={() => updateQuantity(item.product, item.quantity === 1 ? 1 : item.quantity - 1)}>-
+                                    </button>
+                                    <button className="counter">{item.quantity}</button>
+                                    <button onClick={() => updateQuantity(item.product, item.quantity + 1)}>+
+                                    </button>
                                 </div>
                             </th>
-                            <th><label htmlFor="#" className="price">$36.00</label></th>
-                        </tr>
-                        <tr className="table-row">
-                            <th className="img"><Image src="./item-05.jpg" /></th>
-                            <th><h6>Mug Adventure</h6></th>
-                            <th><label htmlFor="#">$16.00</label></th>
-                            <th>
-                                <div className="quantity">
-                                    <button onClick={countDown}>-</button>
-                                    <button className="counter">{count}</button>
-                                    <button onClick={countUp}>+</button>
-                                </div>
-                            </th>
-                            <th><label htmlFor="#" className="price">$16.00</label></th>
-                        </tr>
+                            <th><label htmlFor="#" className="price">{(item.quantity * parseFloat(item.product.span.replace('$',''))).toFixed(2)}</label></th>
+                        </tr>)}
                     </table>
                     <div className="table-footer">
                         <div className="main-table-footer">

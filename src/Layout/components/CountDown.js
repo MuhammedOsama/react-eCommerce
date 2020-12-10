@@ -27,7 +27,7 @@ export default () => {
 
 
     const startTimer = () => {
-        const countDownDate = new Date('Dec 31 2020 00:00:00').getTime();
+        const countDownDate = new Date('Dec 31 2030 00:00:00').getTime();
         interval = setInterval(() => {
             const now = new Date().getTime();
             const distance = countDownDate - now;

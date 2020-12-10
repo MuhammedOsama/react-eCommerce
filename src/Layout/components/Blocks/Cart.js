@@ -4,15 +4,12 @@ import firebase from '../firebase/Config';
 
 export default (props) => {
 
-    const cart = [
-        {price: "Total: $75.00"}
-    ]
 
     const [items, setItems] = useState([]);
 
     useEffect(() => {
 
-        firebase.database().ref('Cart').once('value').then(response => {
+        firebase.database().ref('cart').once('value').then(response => {
             let cart = [];
             response.forEach(item => {
                 cart.push(item.val());
@@ -20,7 +17,8 @@ export default (props) => {
             setItems(cart);
         }).catch((err) => console.log(err));
 
-    }, [items]);
+    }, []);
+    console.log(items);
   
     return <div className={"cart-dropdown"} onClick={() => props.handleCartVisibility(true)}>
         <ul className="cart-product">
@@ -29,22 +27,18 @@ export default (props) => {
                     <div key={id}>
                         <li className="cart-items">
                             <div className="item-img">
-                                <img src={item.image} alt={item.alter}/>
+                                <img src={item.product.image} alt={item.alter}/>
                             </div>
                             <div className="item-txt">
-                                <a href="/" className="item-name">{item.link}</a>
-                                <span className="item-info">{item.price}</span>
+                                <a href="/" className="item-name">{item.product.desc}</a>
+                                <span className="item-info">{item.quantity} × {item.product.span}</span>
                             </div>
                         </li>
                     </div>
                 )
             })}
         </ul>
-        {cart.map((item, id) => {
-            return(
-                <div key={id} className="cart-total">{item.price}</div>
-            )
-        })}
+        <div className="cart-total">Total: $75.00</div>
         <div className="cart-btn">
                 <div className="wrap-btn">
                     <Link to="/features-page" className="view-btn">View Cart</Link>

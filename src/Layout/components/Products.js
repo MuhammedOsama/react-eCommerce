@@ -18,6 +18,7 @@ export default () => {
         1024: {items: 4}
     }
 
+
     const {galleryItems, currentIndex} = state;
 
     useEffect(() => {
@@ -31,6 +32,10 @@ export default () => {
         }).catch((err) => console.log(err));
 
     }, [items]);
+
+    const handleAddToCart = (product, quantity= 1) => {
+        firebase.database().ref('cart/'+product.id).set({product, quantity}).catch(err => console.log(err));
+    }
 
     return (
         <div id="products">
@@ -58,7 +63,10 @@ export default () => {
                                         <i className="fas fa-heart"></i>
                                     </div>
                                     <img className="w-100" src={item.image} alt={item.alter} />
-                                    <a href="/" className="cart-btn">
+                                    <a href="/" className="cart-btn" onClick={(e) => {
+                                        e.preventDefault();
+                                        handleAddToCart(item);
+                                    }} >
                                         {item.link}
                                     </a>
                                 </div>
